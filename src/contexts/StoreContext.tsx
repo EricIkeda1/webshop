@@ -6,6 +6,7 @@ import type { Product } from "../types/product";
 import type { CartItem, Order } from "../types/store";
 interface StoreValue {
   products: Product[];
+  registerProducts: (products: Product[]) => void;
   loading: boolean;
   offline: boolean;
   error: string;

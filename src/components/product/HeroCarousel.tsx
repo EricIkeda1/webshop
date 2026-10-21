@@ -35,7 +35,7 @@ export default function HeroCarousel() {
   return (
     <>
       <div className="hero">
-        <div className="hero-copy">
+        <div className="hero-copy" key={`copy-${index}`}>
           <div className="eyebrow">{slide.eyebrow}</div>
           <h1>
             {slide.lines[0]}
@@ -50,6 +50,7 @@ export default function HeroCarousel() {
         {product && (
           <img
             className="hero-img"
+            key={`image-${index}`}
             src={product.images[0] || product.thumbnail}
             alt={product.title}
             fetchPriority="high"

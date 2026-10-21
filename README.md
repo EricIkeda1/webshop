@@ -24,6 +24,7 @@ Para reproduzir exatamente as versões do arquivo de lock, use `npm ci` no lugar
 ```sh
 npm run dev        # Desenvolvimento com atualização automática
 npm run typecheck  # Verificação de tipos TypeScript
+npm test           # Testes de paginação, filtros, ordenação e cancelamento
 npm run build      # Verificação TypeScript + build de produção em dist/
 npm run preview    # Prévia local após o build
 npm run format     # Formatação do código-fonte
@@ -54,8 +55,15 @@ npm run format     # Formatação do código-fonte
 
 ## Funcionalidades
 
-- Catálogo real carregado de `https://dummyjson.com/products?limit=0`.
-- Busca, categorias, filtro de preço, avaliação mínima e ordenação no catálogo carregado.
+- Catálogo paginado na DummyJSON com `limit` e `skip`; nunca usa `limit=0`.
+- Botão **Ver mais** na página inicial e no catálogo: acrescenta até 12 produtos por clique.
+- Cabeçalho, conteúdo e rodapé aproveitam a largura disponível, com margens responsivas.
+- Animações de entrada, revelação ao rolar, troca de destaque e feedback de botões; respeitam `prefers-reduced-motion`.
+- Busca e ordenação na API; categorias agrupadas mesclam páginas ordenadas sem carregar todo o catálogo.
+- Preço, avaliação e ofertas são filtrados ao percorrer os lotes. Filtros restritivos podem exigir mais de uma requisição para completar 12 resultados.
+- Mudar a busca, categoria ou filtros cancela a requisição anterior e reinicia a seleção.
+- Botão com estado de carregamento, proteção contra cliques repetidos e aviso ao final da lista.
+- Detalhes abertos por link direto e favoritos restaurados carregam apenas os IDs necessários.
 - Carrosséis com indicadores e rolagem por toque.
 - Detalhes do produto, galeria e controle de quantidade limitado pelo estoque.
 - Favoritos e carrinho persistidos no navegador.
@@ -75,4 +83,4 @@ O ZIP não contém `node_modules` nem o resultado de build: essas pastas são ge
 
 ## Validação
 
-A checagem de tipos e o build de produção foram executados com sucesso. A interface desta conversão não foi novamente testada em navegador.
+A checagem de tipos e o build de produção foram executados com sucesso. Os testes automatizados verificam lotes de 12 itens, ausência de duplicação, fim da lista, ordenação entre categorias, filtros, recuperação de falhas e cancelamento. A navegação e o botão Ver mais também foram conferidos no navegador.

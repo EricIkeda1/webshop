@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { useProductLookup } from "../hooks/useProductLookup";
 import { useStore } from "../contexts/StoreContext";
 import { categoryLabel } from "../utils/categories";
 import { money, originalPrice } from "../utils/format";
@@ -17,6 +18,13 @@ export default function ProductPage() {
     setQuantity(1);
     setImage(0);
   }, [id]);
+  const lookup = useProductLookup([Number(id)]);
+  if (lookup.loading)
+    return (
+      <div className="loading" role="status">
+        Carregando produto…
+      </div>
+    );
   const product = products.find((item) => item.id === Number(id));
   if (!product)
     return (

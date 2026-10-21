@@ -1,12 +1,14 @@
 import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { useStore } from "../../contexts/StoreContext";
+import { useScrollReveal } from "../../hooks/useScrollReveal";
 import Header from "./Header";
 import Footer from "./Footer";
 import MobileNav from "./MobileNav";
 import Toast from "../ui/Toast";
 export default function Layout() {
   const { pathname, search } = useLocation();
+  const mainRef = useScrollReveal(pathname);
   const { loading, error, offline, retry } = useStore();
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -15,7 +17,7 @@ export default function Layout() {
   return (
     <>
       <Header />
-      <main className="wrap">
+      <main className="wrap" ref={mainRef}>
         {loading ? (
           <div className="loading" role="status">
             Carregando seus próximos favoritos…

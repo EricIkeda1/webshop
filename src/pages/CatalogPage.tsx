@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { useStore } from "../contexts/StoreContext";
-import { categories, categoryLabel, inCategory } from "../utils/categories";
+import { useProductFeed } from "../hooks/useProductFeed";
+import LoadMoreProducts from "../components/product/LoadMoreProducts";
+import { categories } from "../utils/categories";
 import { money } from "../utils/format";
 import ProductGrid from "../components/product/ProductGrid";
 import Icon from "../components/ui/Icon";
 export default function CatalogPage({ offers = false }: { offers?: boolean }) {
-  const { products } = useStore();
   const [params, setParams] = useSearchParams();
   const [filters, setFilters] = useState(false);
   const [maxPrice, setMaxPrice] = useState(40000);
@@ -14,26 +14,14 @@ export default function CatalogPage({ offers = false }: { offers?: boolean }) {
   const [sort, setSort] = useState("featured");
   const query = params.get("q") ?? "";
   const category = params.get("categoria") ?? "Todos";
-  const filtered = products.filter(
-    (product) =>
-      (!query ||
-        `${product.title} ${product.brand ?? ""} ${product.category} ${categoryLabel(product.category)}`
-          .toLowerCase()
-          .includes(query.toLowerCase())) &&
-      inCategory(product.category, category) &&
-      product.price <= maxPrice &&
-      product.rating >= rating &&
-      (!offers || product.discountPercentage >= 15),
-  );
-  filtered.sort((a, b) =>
-    sort === "low"
-      ? a.price - b.price
-      : sort === "high"
-        ? b.price - a.price
-        : sort === "rating"
-          ? b.rating - a.rating
-          : b.discountPercentage - a.discountPercentage,
-  );
+  const feed = useProductFeed({
+    query,
+    category,
+    maxPrice,
+    rating,
+    sort,
+    offers,
+  });
   function chooseCategory(value: string) {
     const next = new URLSearchParams(params);
     next.set("categoria", value);
@@ -56,7 +44,7 @@ export default function CatalogPage({ offers = false }: { offers?: boolean }) {
                     ? "Encontre seu próximo favorito"
                     : category}
             </h2>
-            <p>{filtered.length} produtos para você explorar</p>
+            <p>Explore a seleção e toque em Ver mais para continuar.</p>
           </div>
           <select
             className="sort"
@@ -128,7 +116,23 @@ export default function CatalogPage({ offers = false }: { offers?: boolean }) {
               Limpar filtros
             </button>
           </aside>
-          <ProductGrid products={filtered} />
+          <div className="catalog-results" aria-busy={feed.loading}>
+            {feed.offline && (
+              <div className="notice">
+                Catálogo de segurança: a API está indisponível no momento.
+              </div>
+            )}
+            {feed.products.length > 0 && (
+              <ProductGrid products={feed.products} />
+            )}
+            <LoadMoreProducts
+              loading={feed.loading}
+              hasMore={feed.hasMore}
+              count={feed.products.length}
+              error={feed.error}
+              onLoadMore={feed.loadMore}
+            />
+          </div>
         </div>
       </section>
     </>

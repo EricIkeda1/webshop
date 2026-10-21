@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { getProducts } from "../services/productsApi";
+import { useCallback, useEffect, useState } from "react";
+import { getFeaturedProducts } from "../services/productsApi";
 import type { Product } from "../types/product";
 export function useProducts() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -11,7 +11,7 @@ export function useProducts() {
     const controller = new AbortController();
     setLoading(true);
     setError("");
-    getProducts(controller.signal)
+    getFeaturedProducts(controller.signal)
       .then((data) => {
         setProducts(data.products);
         setOffline(data.offline);
@@ -27,8 +27,17 @@ export function useProducts() {
       });
     return () => controller.abort();
   }, [attempt]);
+  const registerProducts = useCallback((incoming: Product[]) => {
+    if (!incoming.length) return;
+    setProducts((current) => {
+      const seen = new Set(current.map((product) => product.id));
+      const additions = incoming.filter((product) => !seen.has(product.id));
+      return additions.length ? [...current, ...additions] : current;
+    });
+  }, []);
   return {
     products,
+    registerProducts,
     loading,
     offline,
     error,

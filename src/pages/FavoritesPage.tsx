@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
+import { useProductLookup } from "../hooks/useProductLookup";
 import { useStore } from "../contexts/StoreContext";
 import ProductGrid from "../components/product/ProductGrid";
 import EmptyState from "../components/ui/EmptyState";
 export default function FavoritesPage() {
   const { favorites, products } = useStore();
+  const lookup = useProductLookup(favorites);
   const selected = products.filter((product) => favorites.includes(product.id));
   return (
     <section className="page">
@@ -18,7 +20,18 @@ export default function FavoritesPage() {
           <p>Gostou? Guarde para depois.</p>
         </div>
       </div>
-      {selected.length ? (
+      {lookup.loading ? (
+        <div className="loading" role="status">
+          Carregando favoritos…
+        </div>
+      ) : lookup.error ? (
+        <div className="empty">
+          <p>{lookup.error}</p>
+          <button className="btn" onClick={lookup.retry}>
+            Tentar novamente
+          </button>
+        </div>
+      ) : selected.length ? (
         <ProductGrid products={selected} />
       ) : (
         <EmptyState

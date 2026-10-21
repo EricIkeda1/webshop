@@ -1,23 +1,21 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useStore } from "../contexts/StoreContext";
-import { categories, inCategory } from "../utils/categories";
+import { categories } from "../utils/categories";
 import HeroCarousel from "../components/product/HeroCarousel";
 import ProductCarousel from "../components/product/ProductCarousel";
 import ProductGrid from "../components/product/ProductGrid";
+import { useProductFeed } from "../hooks/useProductFeed";
+import LoadMoreProducts from "../components/product/LoadMoreProducts";
 import Icon from "../components/ui/Icon";
 export default function HomePage() {
   const { products, notify } = useStore();
   const [category, setCategory] = useState("Todos");
   const featuredIds = [101, 10, 78, 47, 100, 8, 82, 103, 79, 80, 81, 99];
-  const featured =
-    category === "Todos"
-      ? featuredIds.flatMap(
-          (id) => products.find((product) => product.id === id) ?? [],
-        )
-      : products
-          .filter((product) => inCategory(product.category, category))
-          .slice(0, 12);
+  const featured = featuredIds.flatMap(
+    (id) => products.find((product) => product.id === id) ?? [],
+  );
+  const feed = useProductFeed({ category });
   return (
     <>
       <HeroCarousel />
@@ -46,17 +44,6 @@ export default function HomePage() {
           <Link className="link" to="/catalogo">
             Ver todos os produtos
           </Link>
-        </div>
-        <div className="tabs">
-          {Object.keys(categories).map((name) => (
-            <button
-              key={name}
-              className={category === name ? "active" : ""}
-              onClick={() => setCategory(name)}
-            >
-              {name}
-            </button>
-          ))}
         </div>
         <ProductCarousel products={featured} />
       </section>
@@ -108,18 +95,39 @@ export default function HomePage() {
       <section>
         <div className="section-head">
           <div>
-            <h2>Achados que valem a pena</h2>
-            <p>Favoritos com preços ainda mais especiais.</p>
+            <h2>Mais escolhas para você</h2>
+            <p>Descubra aos poucos. Mais 12 produtos a cada clique.</p>
           </div>
           <Link className="link" to="/ofertas">
             Ver ofertas
           </Link>
         </div>
-        <ProductGrid
-          products={[...products]
-            .sort((a, b) => b.discountPercentage - a.discountPercentage)
-            .slice(0, 4)}
-        />
+        <div className="tabs">
+          {Object.keys(categories).map((name) => (
+            <button
+              key={name}
+              className={category === name ? "active" : ""}
+              onClick={() => setCategory(name)}
+            >
+              {name}
+            </button>
+          ))}
+        </div>
+        <div aria-busy={feed.loading}>
+          {feed.offline && (
+            <div className="notice">
+              Catálogo de segurança: a API está indisponível no momento.
+            </div>
+          )}
+          {feed.products.length > 0 && <ProductGrid products={feed.products} />}
+          <LoadMoreProducts
+            loading={feed.loading}
+            hasMore={feed.hasMore}
+            count={feed.products.length}
+            error={feed.error}
+            onLoadMore={feed.loadMore}
+          />
+        </div>
       </section>
       <div className="newsletter">
         <div>
