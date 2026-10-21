@@ -1,0 +1,135 @@
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+.product {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  overflow: hidden;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  min-width: 0;
+}
+.product:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px #192b4910;
+}
+.product-picture {
+  height: 205px;
+  position: relative;
+  background: #f0f2f5;
+  display: block;
+  width: 100%;
+  padding: 15px;
+}
+.product-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  transition: transform 0.3s;
+}
+.product-picture:hover img {
+  transform: scale(1.07);
+}
+.discount {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  background: var(--blue);
+  color: white;
+  padding: 5px 8px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 600;
+}
+.favorite {
+  position: absolute;
+  right: 11px;
+  top: 11px;
+  background: #fffc;
+  border: 1px solid #e4e7ec;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  z-index: 2;
+  color: #5e6471;
+}
+.favorite svg {
+  width: 16px;
+}
+.favorite.on {
+  color: var(--blue);
+}
+.favorite.on svg {
+  fill: var(--blue);
+}
+.product-image-wrap {
+  position: relative;
+}
+.product-body {
+  padding: 17px;
+}
+.product-category {
+  text-transform: uppercase;
+  color: #969cac;
+  font-size: 8px;
+  letter-spacing: 1.3px;
+}
+.product-title {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+  height: 39px;
+  margin: 8px 0 6px;
+  display: block;
+}
+.rating {
+  font-size: 10px;
+  color: #9298a5;
+}
+.rating span {
+  color: #f5a623;
+  letter-spacing: 2px;
+}
+.price-old {
+  font-size: 10px;
+  color: #9a9fab;
+  text-decoration: line-through;
+  margin-top: 13px;
+  min-height: 12px;
+}
+.price {
+  font:
+    800 20px Manrope,
+    sans-serif;
+  letter-spacing: -0.6px;
+  margin: 3px 0;
+}
+.installments {
+  font-size: 10px;
+  color: #8a919e;
+}
+.product .btn {
+  margin-top: 16px;
+  width: 100%;
+  padding: 10px 8px;
+  font-size: 10px;
+}
+.carousel {
+  display: flex;
+  overflow: auto;
+  gap: 18px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 4px 0 10px;
+}
+.carousel .product {
+  flex: 0 0 calc((100% - 54px) / 4);
+  scroll-snap-align: start;
+}

@@ -1,0 +1,244 @@
+.hero {
+  margin: 27px 0 0;
+  background: #e9edf2;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  min-height: 382px;
+  display: flex;
+  align-items: center;
+}
+.hero:before {
+  content: "";
+  position: absolute;
+  width: 490px;
+  height: 600px;
+  background: linear-gradient(135deg, #1e72ff, #0043ce);
+  right: -30px;
+  top: -230px;
+  transform: rotate(38deg);
+  border-radius: 90px;
+  box-shadow: 25px 20px 0 #c0cbdc;
+}
+.hero:after {
+  content: "";
+  position: absolute;
+  height: 100px;
+  width: 430px;
+  background: linear-gradient(120deg, #f7f8fa, #bcc5d1);
+  bottom: -24px;
+  right: 15px;
+  transform: skewY(-8deg);
+  box-shadow: 0 -1px 0 #fff;
+}
+.hero-copy {
+  padding: 45px 50px;
+  position: relative;
+  z-index: 2;
+  width: 56%;
+}
+.eyebrow {
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 2.6px;
+  text-transform: uppercase;
+  color: #667183;
+}
+.hero h1 {
+  font-family: Manrope, sans-serif;
+  font-size: 43px;
+  letter-spacing: -1.8px;
+  line-height: 1.18;
+  margin: 17px 0;
+}
+.hero p {
+  color: #687183;
+  margin: 0 0 27px;
+  font-size: 13px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--blue);
+  color: white;
+  border: 1px solid var(--blue);
+  border-radius: 6px;
+  padding: 13px 24px;
+  font-size: 12px;
+  font-weight: 600;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+.btn:hover {
+  background: #0048d6;
+  transform: translateY(-1px);
+}
+.btn.outline {
+  background: white;
+  color: var(--blue);
+}
+.btn.dark {
+  background: #151922;
+  border-color: #151922;
+}
+.hero-img {
+  position: absolute;
+  width: 385px;
+  height: 350px;
+  object-fit: contain;
+  right: 45px;
+  top: 8px;
+  z-index: 2;
+  filter: drop-shadow(0 25px 19px #0c1d3530);
+  transform: rotate(-9deg);
+}
+.hero-tag {
+  position: absolute;
+  right: 25px;
+  bottom: 23px;
+  z-index: 3;
+  background: #ffffffd9;
+  backdrop-filter: blur(8px);
+  padding: 11px 15px;
+  border-radius: 8px;
+  font-size: 11px;
+}
+.hero-tag small {
+  display: block;
+  color: #777;
+  margin-bottom: 3px;
+}
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  margin: 13px 0 0;
+}
+.dots button {
+  width: 6px;
+  height: 6px;
+  background: #cdd2dd;
+  border-radius: 20px;
+  padding: 0;
+}
+.dots button.active {
+  background: var(--blue);
+  width: 22px;
+}
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid var(--line);
+  padding: 26px 0;
+  gap: 18px;
+}
+.benefit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  border-right: 1px solid var(--line);
+}
+.benefit:last-child {
+  border: 0;
+}
+.benefit svg {
+  width: 25px;
+  height: 25px;
+  color: #596373;
+}
+.benefit b {
+  font-size: 11px;
+  display: block;
+  margin-bottom: 4px;
+}
+.benefit small {
+  color: var(--muted);
+  font-size: 10px;
+}
+section {
+  margin: 36px 0;
+}
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.section-head h2 {
+  font:
+    750 25px Manrope,
+    sans-serif;
+  letter-spacing: -0.8px;
+  margin: 0;
+}
+.section-head p {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 7px 0 0;
+}
+.link {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 600;
+}
+.tabs {
+  display: flex;
+  gap: 9px;
+  margin-bottom: 23px;
+  flex-wrap: wrap;
+}
+.tabs button {
+  background: white;
+  border: 1px solid var(--line);
+  padding: 9px 19px;
+  border-radius: 25px;
+  font-size: 11px;
+  color: #6a7180;
+}
+.tabs .active {
+  background: var(--blue);
+  color: white;
+  border-color: var(--blue);
+}
+.editorial {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.promo {
+  padding: 30px;
+  min-height: 198px;
+  background: #eaf0ff;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.promo:nth-child(2) {
+  background: #efebe6;
+}
+.promo h3 {
+  font:
+    750 24px Manrope,
+    sans-serif;
+  max-width: 60%;
+  margin: 12px 0 20px;
+  letter-spacing: -0.8px;
+}
+.promo img {
+  position: absolute;
+  width: 185px;
+  height: 185px;
+  object-fit: contain;
+  right: 5px;
+  top: 10px;
+  mix-blend-mode: multiply;
+}
+.promo a {
+  position: relative;
+  z-index: 2;
+}

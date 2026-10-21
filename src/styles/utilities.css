@@ -1,0 +1,47 @@
+/* Shared utility rules. Presentation stays outside JSX. */
+.full-width {
+  width: 100%;
+}
+.filter-heading {
+  margin-top: 30px !important;
+}
+.space-top {
+  margin-top: 20px;
+}
+.summary-heading {
+  margin-top: 25px !important;
+}
+.summary-note {
+  text-align: center;
+  margin-top: 12px;
+}
+.continue-shopping {
+  display: block;
+  margin-top: 25px;
+}
+.summary-self {
+  align-self: start;
+}
+.order-icon {
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+.account-link {
+  width: 100%;
+  margin: 12px 0;
+}
+.center {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.footer-grid > div > a:not(.brand) {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  margin: 12px 0;
+}
+.success .cart-row {
+  text-align: left;
+}
