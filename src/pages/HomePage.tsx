@@ -38,15 +38,13 @@ export default function HomePage() {
       <button
         className="discover-below"
         onClick={() =>
-          document
-            .getElementById("home-products")
-            ?.scrollIntoView({
-              behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
-                .matches
-                ? "instant"
-                : "smooth",
-              block: "start",
-            })
+          document.getElementById("home-products")?.scrollIntoView({
+            behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
+              .matches
+              ? "instant"
+              : "smooth",
+            block: "start",
+          })
         }
       >
         <span>Tem mais para descobrir</span>

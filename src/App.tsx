@@ -11,28 +11,31 @@ import AccountPage from "./pages/AccountPage";
 import OrderPage from "./pages/OrderPage";
 import HelpPage from "./pages/HelpPage";
 import InstitutionalPage from "./pages/InstitutionalPage";
+import DemoStoreNotice from "./components/ui/DemoStoreNotice";
 import NotFoundPage from "./pages/NotFoundPage";
 export default function App() {
   return (
-    <HashRouter>
-      <StoreProvider>
-        <Routes>
-          <Route element={<Layout />}>
-            <Route index element={<HomePage />} />
-            <Route path="catalogo" element={<CatalogPage />} />
-            <Route path="ofertas" element={<CatalogPage offers />} />
-            <Route path="produto/:id" element={<ProductPage />} />
-            <Route path="favoritos" element={<FavoritesPage />} />
-            <Route path="carrinho" element={<CartPage />} />
-            <Route path="checkout" element={<CheckoutPage />} />
-            <Route path="conta" element={<AccountPage />} />
-            <Route path="pedido/:id" element={<OrderPage />} />
-            <Route path="institucional" element={<InstitutionalPage />} />
-            <Route path="ajuda" element={<HelpPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Route>
-        </Routes>
-      </StoreProvider>
-    </HashRouter>
+    <DemoStoreNotice>
+      <HashRouter>
+        <StoreProvider>
+          <Routes>
+            <Route element={<Layout />}>
+              <Route index element={<HomePage />} />
+              <Route path="catalogo" element={<CatalogPage />} />
+              <Route path="ofertas" element={<CatalogPage offers />} />
+              <Route path="produto/:id" element={<ProductPage />} />
+              <Route path="favoritos" element={<FavoritesPage />} />
+              <Route path="carrinho" element={<CartPage />} />
+              <Route path="checkout" element={<CheckoutPage />} />
+              <Route path="conta" element={<AccountPage />} />
+              <Route path="pedido/:id" element={<OrderPage />} />
+              <Route path="institucional" element={<InstitutionalPage />} />
+              <Route path="ajuda" element={<HelpPage />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Route>
+          </Routes>
+        </StoreProvider>
+      </HashRouter>
+    </DemoStoreNotice>
   );
 }

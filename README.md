@@ -108,3 +108,9 @@ Carrossel, página Institucional e catálogo foram conferidos no navegador; Type
 - Institucional: entrada progressiva de título e textos, logo com movimento suave, revelação de blocos ao rolar, interações nos ícones e links, destaque da seção selecionada e navegação com linha animada.
 - Animações institucionais em `src/styles/institutional-motion.css`; todas respeitam a preferência por movimento reduzido.
 - Conferência no navegador: benefícios e início da coleção visíveis na primeira tela de desktop; navegação e animações institucionais verificadas. TypeScript e build aprovados.
+
+## Atualização 1.2.2
+
+Tela de entrada obrigatória com o aviso “Esta loja é fictícia”, informando que não há cobranças nem entregas reais e orientando o uso de dados fictícios. O botão “Entendi, entrar na loja” libera o acesso. O aviso aparece a cada abertura ou recarregamento, inclusive em links diretos, sem reaparecer ao navegar entre as páginas. Não é um aceite de termos: é apenas uma confirmação informativa. A loja e suas consultas de produtos só são montadas após a confirmação.
+
+Componente: `src/components/ui/DemoStoreNotice.tsx`. Estilos: `src/styles/demo-store-notice.css`. TypeScript, build e fluxo de entrada conferidos.
