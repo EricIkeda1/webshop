@@ -27,20 +27,33 @@ export default function OrderSummary({
       )}
       <div className="summary-line">
         <span>Entrega</span>
-        <b>{shippingSelection ? money(shipping) : "A calcular"}</b>
+        <b>
+          {shippingSelection
+            ? money(shipping)
+            : checkout
+              ? "Não cotada"
+              : "A calcular"}
+        </b>
       </div>
       <div className="summary-line total">
-        <span>{shippingSelection ? "Total" : "Subtotal com desconto"}</span>
+        <span>
+          {shippingSelection
+            ? "Total demonstrativo"
+            : checkout
+              ? "Total sem frete"
+              : "Subtotal com desconto"}
+        </span>
         <b>{money(total)}</b>
       </div>
       <p className="small-note">Em até 6x de {money(total / 6)} sem juros</p>
+      {checkout && !shippingSelection && (
+        <p className="small-note">
+          Você pode confirmar a demonstração sem cotação. O valor acima não
+          inclui frete e nenhum produto será enviado.
+        </p>
+      )}
       {checkout ? (
-        <button
-          className="btn"
-          type="submit"
-          form="checkout-form"
-          disabled={!shippingSelection}
-        >
+        <button className="btn" type="submit" form="checkout-form">
           Confirmar pedido demonstrativo
         </button>
       ) : (

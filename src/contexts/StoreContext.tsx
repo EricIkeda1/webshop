@@ -6,6 +6,8 @@ import type { Product } from "../types/product";
 import type { CartItem, Order } from "../types/store";
 import type { ShippingSelection } from "../types/shipping";
 import { cartShippingKey } from "../services/shippingApi";
+import { orderDelivery } from "../utils/orderDelivery";
+import { createOrderId } from "../utils/orderId";
 interface StoreValue {
   shippingCep: string;
   setShippingCep: (cep: string) => void;
@@ -32,7 +34,7 @@ interface StoreValue {
   removeFromCart: (id: number) => void;
   toggleFavorite: (id: number) => void;
   applyCoupon: (value: string) => void;
-  placeOrder: (shipping: number, payment: string) => Order | null;
+  placeOrder: (payment: string) => Order | null;
 }
 const StoreContext = createContext<StoreValue | null>(null);
 export function StoreProvider({ children }: { children: ReactNode }) {
@@ -116,24 +118,20 @@ export function StoreProvider({ children }: { children: ReactNode }) {
         : "Cupom inválido. Experimente EYI10.",
     );
   }
-  function placeOrder(shipping: number, payment: string) {
-    if (
-      !cart.length ||
-      !shippingSelection ||
-      shippingSelection.option.expiresAt <= Date.now()
-    ) {
-      notify("Calcule e selecione uma opção de entrega para continuar.");
+  function placeOrder(payment: string) {
+    if (!cart.length) {
+      notify("Adicione produtos ao carrinho para continuar.");
       return null;
     }
-    shipping = shippingSelection.option.price;
+    const delivery = orderDelivery(shippingChoice, cart, shippingCep);
     const order: Order = {
-      id: `EYI-${crypto.randomUUID().slice(0, 8).toUpperCase()}`,
+      id: createOrderId(),
       date: new Date().toISOString(),
       items: cart.map((item) => ({ ...item })),
       subtotal,
       discount,
-      shipping,
-      total: subtotal - discount + shipping,
+      ...delivery,
+      total: subtotal - discount + delivery.shipping,
       payment,
     };
     setOrders((items) => [order, ...items]);

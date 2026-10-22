@@ -1,0 +1,28 @@
+.shipping-destination {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 13px;
+  margin: 14px 0;
+  border: 1px solid #d5e7df;
+  border-radius: 13px;
+  background: #f0f8f4;
+  color: #35654b;
+}
+.shipping-destination > svg {
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.shipping-destination strong {
+  display: block;
+  font-size: 12px;
+}
+.shipping-destination span,
+.shipping-destination small {
+  display: block;
+  font-size: 10px;
+  line-height: 1.6;
+  margin-top: 4px;
+}

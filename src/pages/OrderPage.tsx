@@ -43,17 +43,41 @@ export default function OrderPage() {
         </div>
       )}
       <div className="summary-line">
-        <span>Entrega cotada</span>
-        <b>{order.shipping ? money(order.shipping) : "Grátis"}</b>
+        <span>
+          {order.shippingQuoted === false
+            ? "Entrega não cotada"
+            : "Entrega cotada"}
+        </span>
+        <b>
+          {order.shippingQuoted === false
+            ? "Não incluída no total"
+            : money(order.shipping)}
+        </b>
       </div>
       <div className="summary-line total">
-        <span>Total do pedido</span>
+        <span>
+          {order.shippingQuoted === false
+            ? "Total demonstrativo sem frete"
+            : "Total demonstrativo"}
+        </span>
         <b>{money(order.total)}</b>
       </div>
       <div className="notice">
         Pagamento: {order.payment} (simulado)
         <br />
         Status: pedido demonstrativo confirmado.
+        {order.shippingQuoted === false && (
+          <>
+            <br />O frete não foi cotado e não está incluído no total. Nenhum
+            produto será enviado.
+          </>
+        )}
+        {order.shippingSandbox && (
+          <>
+            <br />
+            Entrega baseada em cotação de teste (sandbox).
+          </>
+        )}
       </div>
       <div className="inline center">
         <Link className="btn" to="/conta">

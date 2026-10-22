@@ -1,5 +1,14 @@
 import type { CartItem } from "../types/store";
 import type { ShippingQuote } from "../types/shipping";
+export class ShippingQuoteError extends Error {
+  constructor(
+    readonly code: string,
+    message: string,
+  ) {
+    super(message);
+    this.name = "ShippingQuoteError";
+  }
+}
 export const cartShippingKey = (items: CartItem[]) =>
   items
     .map((item) => `${item.product.id}:${item.quantity}`)
@@ -22,8 +31,19 @@ export async function getShippingQuote(
     }),
     signal,
   });
-  const data = await response.json();
+  let data;
+  try {
+    data = await response.json();
+  } catch {
+    throw new ShippingQuoteError(
+      "shipping_unavailable",
+      "O serviço de frete não respondeu corretamente. Tente novamente mais tarde.",
+    );
+  }
   if (!response.ok)
-    throw new Error(data.message || "Não foi possível consultar o frete.");
+    throw new ShippingQuoteError(
+      data.code || "shipping_unavailable",
+      data.message || "Não foi possível consultar o frete.",
+    );
   return data;
 }

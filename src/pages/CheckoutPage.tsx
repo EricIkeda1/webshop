@@ -5,9 +5,8 @@ import CheckoutAddressFields from "../components/checkout/CheckoutAddressFields"
 import ShippingCalculator from "../components/cart/ShippingCalculator";
 import EmptyState from "../components/ui/EmptyState";
 export default function CheckoutPage() {
-  const { cart, placeOrder, shippingSelection } = useStore();
+  const { cart, placeOrder } = useStore();
   const navigate = useNavigate();
-  const shipping = shippingSelection?.option.price ?? 0;
   if (!cart.length)
     return (
       <EmptyState
@@ -30,7 +29,9 @@ export default function CheckoutPage() {
       </div>
       <div className="notice">
         Esta é uma compra demonstrativa. Use dados fictícios. Não solicitamos
-        dados de cartão e nenhum pagamento será processado.
+        dados de cartão e nenhum pagamento será processado. A cotação de frete é
+        opcional para concluir esta demonstração; sem cotação, o total não
+        inclui entrega.
       </div>
       <div className="cart-layout">
         <form
@@ -41,7 +42,7 @@ export default function CheckoutPage() {
             const payment = String(
               new FormData(event.currentTarget).get("payment") ?? "Pix",
             );
-            const order = placeOrder(shipping, payment);
+            const order = placeOrder(payment);
             if (order) navigate(`/pedido/${order.id}`);
           }}
         >
@@ -69,7 +70,7 @@ export default function CheckoutPage() {
             </label>
             <CheckoutAddressFields />
           </div>
-          <h3>Opções de entrega</h3>
+          <h3>Opções de entrega (opcional na demonstração)</h3>
           <ShippingCalculator checkout />
           <h3>Forma de pagamento (simulada)</h3>
           <label className="radio-card">

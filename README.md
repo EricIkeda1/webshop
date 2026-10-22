@@ -2,6 +2,26 @@
 
 Loja fictícia com interface responsiva, catálogo paginado, carrossel automático, favoritos, carrinho, checkout e página Institucional. A entrada exige confirmação de que o site é demonstrativo.
 
+## Confirmação demonstrativa · versão 2.2.4
+
+A confirmação de um pedido demonstrativo não exige cotação de frete. O formulário continua exigindo nome, e-mail válido, CEP com 8 dígitos, logradouro, bairro, cidade, UF, número e a confirmação de que a compra é fictícia. Se a busca de CEP falhar, é possível preencher o endereço manualmente e concluir.
+
+Sem cotação válida, o resumo e a confirmação exibem **Total sem frete**, **Entrega não cotada** e informam que a entrega não está incluída. Não é apresentado frete grátis. Cotações válidas selecionadas continuam compondo o total; cotações vencidas ou referentes a outro CEP/carrinho não são reaproveitadas. O pedido registra se houve cotação e se ela era de teste.
+
+A geração do identificador local do pedido funciona também em prévias HTTP, onde `crypto.randomUUID` pode estar indisponível. Não se trata de um identificador de autenticação.
+
+Verificação: compilação e testes aprovados; no navegador, o formulário vazio foi bloqueado, os dados fictícios foram preenchidos manualmente e o pedido foi confirmado sem consulta de endereço nem cotação disponível. A tela Pedido realizado foi exibida, o carrinho foi esvaziado e a entrega ficou marcada como não cotada. Nenhum pagamento, envio ou e-mail foi realizado.
+
+## CEP no carrinho · versão 2.2.3
+
+O botão Calcular consulta o endereço do CEP pela rota própria, com ViaCEP e BrasilAPI como alternativa, e exibe cidade, UF, logradouro/bairro quando disponíveis e o CEP formatado. Um CEP geral de município pode não possuir rua ou bairro; esse caso é aceito e identificado no resultado.
+
+A busca de endereço e a cotação são resultados independentes. O endereço encontrado continua visível quando o Melhor Envio está sem configuração. CEP inválido ou não encontrado interrompe a tentativa de cotação; se os serviços de endereço estiverem indisponíveis, a cotação ainda pode ser consultada com o CEP informado. Alterar CEP ou carrinho cancela o resultado anterior.
+
+**A cotação real ainda não está ativada neste pacote.** Para retornar preços e prazos, configure o token do Melhor Envio, o CEP de origem, o identificador técnico da aplicação e as embalagens reais, conforme a seção Frete real. Na Vercel, cadastre as variáveis em Settings → Environment Variables e faça novo deploy. As imagens e produtos demonstrativos não possuem embalagens reais cadastradas. Nenhuma credencial foi inventada nem um preço simulado foi apresentado como real.
+
+Compilação e testes aprovados, incluindo endereço preservado durante falha de configuração, CEP inválido, falha do serviço de endereço, cancelamento e respostas de implantação sem JSON. Não houve ativação do Melhor Envio nem validação de uma cotação real.
+
 ## Feedback de toque · versão 2.2.2
 
 O realce retangular nativo de toque foi desativado em links, botões, campos, rótulos e demais controles interativos. A navegação mobile mantém a cápsula azul da aba ativa e a animação de toque existente. Botões e links preservam seus formatos arredondados.
@@ -108,7 +128,7 @@ O botão **Calcular frete** foi integrado à cotação do Melhor Envio. Os valor
 
 A cotação envia somente os CEPs de origem/destino e os dados de produtos necessários à transportadora. Peso, dimensões e valor declarado vêm do cadastro no servidor, e não de valores enviados pelo visitante. Usa `custom_price` e `custom_delivery_time` quando retornados pelo provedor. Respostas sandbox são identificadas na interface. Nenhuma etiqueta é comprada, nenhum pagamento é efetuado e nenhum envio é criado.
 
-É possível selecionar uma opção de entrega no carrinho ou no checkout. A seleção compõe o resumo e o total. Mudar o CEP ou o conteúdo do carrinho invalida a escolha anterior. Cotações expiram em 10 minutos. Enquanto nenhuma entrega estiver selecionada, o resumo exibe **A calcular**, sem assumir frete grátis; a confirmação do pedido demonstrativo exige uma opção válida.
+É possível selecionar uma opção de entrega no carrinho ou no checkout. A seleção compõe o resumo e o total. Mudar o CEP ou o conteúdo do carrinho invalida a escolha anterior. Cotações expiram em 10 minutos. Sem entrega selecionada, o carrinho exibe **A calcular**. No checkout demonstrativo, a cotação é opcional: o resumo e o pedido identificam que o frete não foi incluído, permitindo concluir com os campos obrigatórios válidos.
 
 A integração foi validada com respostas simuladas do provedor; uma cotação real de produção depende das credenciais, origem e medidas ainda não fornecidas. Os produtos e preços da loja continuam fictícios.
 

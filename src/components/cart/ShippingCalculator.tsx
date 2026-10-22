@@ -1,9 +1,15 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { useStore } from "../../contexts/StoreContext";
 import { formatCep } from "../../services/addressApi";
-import { cartShippingKey, getShippingQuote } from "../../services/shippingApi";
+import { cartShippingKey } from "../../services/shippingApi";
 import type { ShippingQuote } from "../../types/shipping";
 import { money } from "../../utils/format";
+import {
+  getDeliveryEstimate,
+  type DeliveryEstimate,
+} from "../../services/deliveryEstimate";
+import Icon from "../ui/Icon";
+import "../../styles/shipping-destination.css";
 export default function ShippingCalculator({
   checkout = false,
 }: {
@@ -19,12 +25,18 @@ export default function ShippingCalculator({
   const [quote, setQuote] = useState<ShippingQuote | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [destination, setDestination] =
+    useState<DeliveryEstimate["destination"]>(null);
+  const [addressWarning, setAddressWarning] = useState("");
+  const statusId = useId();
   const request = useRef<AbortController | null>(null);
   const key = cartShippingKey(cart);
   const cep = shippingCep.replace(/\D/g, "");
   useEffect(() => {
     request.current?.abort();
     setQuote(null);
+    setDestination(null);
+    setAddressWarning("");
     setError("");
     setLoading(false);
     return () => request.current?.abort();
@@ -39,10 +51,18 @@ export default function ShippingCalculator({
     request.current = controller;
     setLoading(true);
     setError("");
+    setQuote(null);
+    setDestination(null);
+    setAddressWarning("");
     selectShipping(null);
     try {
-      const result = await getShippingQuote(cep, cart, controller.signal);
-      if (!controller.signal.aborted) setQuote(result);
+      const result = await getDeliveryEstimate(cep, cart, controller.signal);
+      if (!controller.signal.aborted) {
+        setDestination(result.destination);
+        setAddressWarning(result.addressWarning);
+        setQuote(result.quote);
+        setError(result.error);
+      }
     } catch (failure) {
       if (!controller.signal.aborted)
         setError(
@@ -66,6 +86,7 @@ export default function ShippingCalculator({
             inputMode="numeric"
             maxLength={9}
             aria-label="CEP para calcular frete"
+            aria-describedby={statusId}
             onKeyDown={(event) => {
               if (event.key === "Enter") {
                 event.preventDefault();
@@ -96,11 +117,30 @@ export default function ShippingCalculator({
             : "Informe o CEP para consultar transportadoras e prazos."}
         </p>
       )}
-      {error && (
-        <p className="notice" role="status">
-          {error}
-        </p>
-      )}
+      <div id={statusId} aria-live="polite">
+        {destination && (
+          <div className="shipping-destination">
+            <Icon name="pin" />
+            <div>
+              <strong>
+                {destination.city} / {destination.state}
+              </strong>
+              <span>
+                {[destination.street, destination.neighborhood]
+                  .filter(Boolean)
+                  .join(" · ") || "CEP geral do município"}
+              </span>
+              <small>CEP {formatCep(destination.cep)}</small>
+            </div>
+          </div>
+        )}
+        {addressWarning && <p className="small-note">{addressWarning}</p>}
+        {error && (
+          <p className="notice" role="status">
+            {error}
+          </p>
+        )}
+      </div>
       {quote?.sandbox && (
         <p className="notice">
           Cotação de teste: ambiente sandbox. Os valores ainda não são de
