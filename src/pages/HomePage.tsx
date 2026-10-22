@@ -35,7 +35,24 @@ export default function HomePage() {
           </div>
         ))}
       </div>
-      <section>
+      <button
+        className="discover-below"
+        onClick={() =>
+          document
+            .getElementById("home-products")
+            ?.scrollIntoView({
+              behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
+                .matches
+                ? "instant"
+                : "smooth",
+              block: "start",
+            })
+        }
+      >
+        <span>Tem mais para descobrir</span>
+        <span className="discover-chevron" aria-hidden="true" />
+      </button>
+      <section id="home-products" className="home-products">
         <div className="section-head">
           <div>
             <h2>Seus próximos favoritos</h2>

@@ -289,3 +289,12 @@
     transition: none !important;
   }
 }
+.pix-official-logo {
+  width: 98px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+.site-footer-column h2 a:hover {
+  color: var(--blue);
+}

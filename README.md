@@ -88,3 +88,23 @@ A checagem de tipos e o build de produção foram executados com sucesso. Os tes
 ## Rodapé atualizado
 
 O rodapé segue a referência fornecida: logo em fundo claro, redes sociais, colunas Institucional e Atendimento, selos de pagamento e copyright. Componentes: `Footer.tsx`, `FooterSocials.tsx` e `FooterPayments.tsx`; estilos em `src/styles/footer.css`. Os ícones sociais abrem uma informação enquanto os perfis oficiais não forem configurados. Os selos de pagamento são ilustrativos e não representam integrações reais.
+
+## Atualização 1.2.0
+
+- Logo do Pix: arquivo WebP transparente fornecido pelo usuário, preservado em `public/assets/pix-logo.webp` e exibido sem redesenho ou alteração de proporção.
+- Carrossel principal ampliado: 530px no desktop, 590px em telas grandes e 495px no celular; imagens e tipografia ampliadas.
+- Troca automática a cada 5 segundos, indicadores, contador, barra de progresso e botão Pausar/Continuar. O temporizador reinicia após mudar um destaque; pausa ao passar o mouse, ao focar controles pelo teclado ou quando a aba fica em segundo plano. Para preferências de movimento reduzido, a troca fica manual.
+- Hook `useAutoCarousel.ts` concentra o temporizador e sua limpeza.
+- Página única `/#/institucional`: Sobre nós, Nossas lojas e Trabalhe conosco, com navegação para cada seção a partir do rodapé. Nenhum endereço ou vaga real foi inventado.
+- Cards maiores: imagens ampliadas, títulos limitados a duas linhas, preços destacados, favoritos e botões mais legíveis. CSS específico em `src/styles/product-card.css`.
+
+Carrossel, página Institucional e catálogo foram conferidos no navegador; TypeScript e build de produção passaram. Os pagamentos continuam demonstrativos.
+
+## Atualização 1.2.1
+
+- Banner principal mais compacto: altura responsiva entre 290px e 380px no desktop, 370px no celular. Ajustes finais em `src/styles/intro-refinement.css` substituem os tamanhos da versão anterior.
+- Benefícios mais próximos do banner e sempre visíveis, sem depender de uma animação de revelação.
+- Botão animado “Tem mais para descobrir” leva à coleção de produtos.
+- Institucional: entrada progressiva de título e textos, logo com movimento suave, revelação de blocos ao rolar, interações nos ícones e links, destaque da seção selecionada e navegação com linha animada.
+- Animações institucionais em `src/styles/institutional-motion.css`; todas respeitam a preferência por movimento reduzido.
+- Conferência no navegador: benefícios e início da coleção visíveis na primeira tela de desktop; navegação e animações institucionais verificadas. TypeScript e build aprovados.

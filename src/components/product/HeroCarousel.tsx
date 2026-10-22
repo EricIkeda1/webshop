@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useAutoCarousel } from "../../hooks/useAutoCarousel";
 import { Link } from "react-router-dom";
 import { useStore } from "../../contexts/StoreContext";
 const slides = [
@@ -28,13 +28,39 @@ const slides = [
   },
 ];
 export default function HeroCarousel() {
-  const [index, setIndex] = useState(0);
+  const {
+    index,
+    setIndex,
+    paused,
+    stopped,
+    setStopped,
+    setHovering,
+    setFocused,
+    reducedMotion,
+  } = useAutoCarousel(slides.length);
   const { products } = useStore();
   const slide = slides[index];
   const product = products.find((item) => item.id === slide.id);
   return (
-    <>
-      <div className="hero">
+    <div
+      className={`hero-carousel ${paused ? "is-paused" : ""}`}
+      role="region"
+      aria-roledescription="carrossel"
+      aria-label="Destaques da loja"
+      onMouseEnter={() => setHovering(true)}
+      onMouseLeave={() => setHovering(false)}
+      onFocusCapture={() => setFocused(true)}
+      onBlurCapture={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null))
+          setFocused(false);
+      }}
+    >
+      <div
+        className="hero"
+        role="group"
+        aria-roledescription="slide"
+        aria-label={`${index + 1} de ${slides.length}`}
+      >
         <div className="hero-copy" key={`copy-${index}`}>
           <div className="eyebrow">{slide.eyebrow}</div>
           <h1>
@@ -61,17 +87,37 @@ export default function HeroCarousel() {
           {slide.tag}
         </div>
       </div>
-      <div className="dots" aria-label="Destaques">
-        {slides.map((_, slideIndex) => (
+      <div className="hero-controls">
+        <div className="dots" aria-label="Destaques">
+          {slides.map((_, slideIndex) => (
+            <button
+              key={slideIndex}
+              className={index === slideIndex ? "active" : ""}
+              onClick={() => setIndex(slideIndex)}
+              aria-label={`Destaque ${slideIndex + 1}`}
+              aria-pressed={index === slideIndex}
+            />
+          ))}
+        </div>
+        <span className="hero-counter">
+          0{index + 1} <span>/ 0{slides.length}</span>
+        </span>
+        {!reducedMotion && (
           <button
-            key={slideIndex}
-            className={index === slideIndex ? "active" : ""}
-            onClick={() => setIndex(slideIndex)}
-            aria-label={`Destaque ${slideIndex + 1}`}
-            aria-pressed={index === slideIndex}
-          />
-        ))}
+            className="hero-autoplay"
+            aria-label={
+              stopped ? "Retomar troca automática" : "Pausar troca automática"
+            }
+            aria-pressed={stopped}
+            onClick={() => setStopped(!stopped)}
+          >
+            {stopped ? "Continuar" : "Pausar"}
+          </button>
+        )}
       </div>
-    </>
+      <div className="hero-progress" aria-hidden="true">
+        <span key={`${index}-${paused}`} />
+      </div>
+    </div>
   );
 }

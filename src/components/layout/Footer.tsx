@@ -5,18 +5,6 @@ import FooterSocials from "./FooterSocials";
 import "../../styles/footer.css";
 
 const information = {
-  about: {
-    title: "Sobre nós",
-    text: "A EYI Store é um projeto de e-commerce que reúne tecnologia, beleza, casa e moda em uma experiência simples e responsiva. O catálogo utiliza produtos demonstrativos da DummyJSON, sem vendas ou entregas reais.",
-  },
-  stores: {
-    title: "Nossas lojas",
-    text: "Esta versão é uma loja virtual demonstrativa. Não há unidades físicas ou pontos de retirada cadastrados no projeto.",
-  },
-  careers: {
-    title: "Trabalhe conosco",
-    text: "Não há vagas ou processo seletivo neste projeto demonstrativo.",
-  },
   terms: {
     title: "Termos de uso",
     text: "Esta loja é uma demonstração para explorar produtos, salvar favoritos e simular pedidos. Os preços são ilustrativos em reais, sem conversão cambial. Nenhum pagamento é processado e nenhum pedido é enviado para entrega. Use dados fictícios no checkout.",
@@ -34,7 +22,7 @@ type InformationKey = keyof typeof information;
 
 export default function Footer() {
   const dialog = useRef<HTMLDialogElement>(null);
-  const [active, setActive] = useState<InformationKey>("about");
+  const [active, setActive] = useState<InformationKey>("terms");
   function showInformation(key: InformationKey) {
     setActive(key);
     dialog.current?.showModal();
@@ -72,14 +60,14 @@ export default function Footer() {
             <FooterSocials onSelect={() => showInformation("social")} />
           </div>
           <nav className="site-footer-column" aria-label="Institucional">
-            <h2>Institucional</h2>
-            <button onClick={() => showInformation("about")}>Sobre nós</button>
-            <button onClick={() => showInformation("stores")}>
-              Nossas lojas
-            </button>
-            <button onClick={() => showInformation("careers")}>
+            <h2>
+              <Link to="/institucional">Institucional</Link>
+            </h2>
+            <Link to="/institucional?secao=sobre-nos">Sobre nós</Link>
+            <Link to="/institucional?secao=nossas-lojas">Nossas lojas</Link>
+            <Link to="/institucional?secao=trabalhe-conosco">
               Trabalhe conosco
-            </button>
+            </Link>
           </nav>
           <nav className="site-footer-column" aria-label="Atendimento">
             <h2>Atendimento</h2>

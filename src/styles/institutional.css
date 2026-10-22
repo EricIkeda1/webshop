@@ -1,0 +1,209 @@
+.institutional-page {
+  padding-bottom: 32px;
+}
+.institutional-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  background: #eaf0ff;
+  border: 1px solid #e0e8f8;
+  border-radius: 16px;
+  padding: clamp(32px, 5vw, 80px);
+  overflow: hidden;
+}
+.institutional-hero h1 {
+  font:
+    800 clamp(32px, 3.5vw, 58px)/1.14 Manrope,
+    sans-serif;
+  letter-spacing: -2px;
+  margin: 20px 0;
+}
+.institutional-hero p {
+  max-width: 560px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #647087;
+}
+.institutional-monogram {
+  background: #11151e;
+  border-radius: 24px;
+  width: 230px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  rotate: -7deg;
+  flex-shrink: 0;
+}
+.institutional-monogram img {
+  width: 85%;
+  mix-blend-mode: screen;
+}
+.institutional-nav {
+  display: flex;
+  gap: 28px;
+  padding: 23px 0;
+  border-bottom: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+.institutional-nav a {
+  color: #717b8d;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 0;
+}
+.institutional-nav a.active {
+  color: var(--blue);
+  box-shadow: 0 2px var(--blue);
+}
+.institutional-section {
+  display: grid;
+  grid-template-columns: minmax(200px, 0.8fr) minmax(0, 2fr);
+  gap: 50px;
+  padding: 30px 0 45px;
+  margin: 35px 0 0;
+  border-bottom: 1px solid var(--line);
+  scroll-margin-top: 115px;
+}
+.institutional-section-label > span {
+  color: #8a95a6;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+.institutional-section-label h2 {
+  font:
+    750 30px Manrope,
+    sans-serif;
+  letter-spacing: -1px;
+}
+.institutional-section-content {
+  max-width: 1050px;
+}
+.institutional-section-content > h3 {
+  font:
+    700 24px/1.4 Manrope,
+    sans-serif;
+  letter-spacing: -0.6px;
+  margin-top: 0;
+}
+.institutional-section-content p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #717b8d;
+}
+.institutional-values {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin: 30px 0;
+}
+.institutional-values svg {
+  color: var(--blue);
+  height: 26px;
+  width: 26px;
+}
+.institutional-values h4 {
+  margin: 13px 0 6px;
+  font-size: 14px;
+}
+.institutional-values p {
+  font-size: 12px;
+  margin-top: 0;
+}
+.institutional-callout {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 24px;
+  margin-top: 23px;
+}
+.institutional-callout > svg {
+  width: 30px;
+  height: 30px;
+  color: var(--blue);
+  flex-shrink: 0;
+}
+.institutional-callout > div {
+  flex: 1;
+}
+.institutional-callout h4 {
+  margin: 0 0 6px;
+  font-size: 15px;
+}
+.institutional-callout p {
+  margin: 0;
+  font-size: 12px;
+}
+@media (max-width: 850px) {
+  .institutional-monogram {
+    width: 160px;
+  }
+  .institutional-section {
+    gap: 28px;
+    grid-template-columns: 170px minmax(0, 1fr);
+  }
+  .institutional-values {
+    gap: 15px;
+  }
+  .institutional-callout {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 650px) {
+  .institutional-hero {
+    padding: 30px 22px;
+  }
+  .institutional-hero h1 {
+    letter-spacing: -1px;
+  }
+  .institutional-hero p {
+    font-size: 12px;
+  }
+  .institutional-monogram {
+    display: none;
+  }
+  .institutional-nav {
+    gap: 20px;
+  }
+  .institutional-nav a {
+    font-size: 11px;
+  }
+  .institutional-section {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding-top: 15px;
+    scroll-margin-top: 135px;
+  }
+  .institutional-section-label h2 {
+    font-size: 26px;
+    margin: 12px 0;
+  }
+  .institutional-section-content > h3 {
+    font-size: 20px;
+  }
+  .institutional-section-content p {
+    font-size: 12px;
+  }
+  .institutional-values {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .institutional-values > div {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    gap: 0 12px;
+  }
+  .institutional-values h4 {
+    margin: 2px 0 6px;
+  }
+  .institutional-values p {
+    grid-column: 2;
+  }
+  .institutional-callout {
+    padding: 18px;
+    gap: 15px;
+  }
+}

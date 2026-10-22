@@ -1,0 +1,180 @@
+/* Keep benefits and the beginning of the product collection in the first fold. */
+.hero-carousel .hero {
+  margin-top: 20px;
+  min-height: clamp(290px, 39svh, 380px);
+}
+.hero-carousel .hero-copy {
+  padding: 30px 42px;
+  width: 62%;
+}
+.hero-carousel .hero h1 {
+  font-size: clamp(32px, 3.2vw, 48px);
+  margin: 12px 0;
+  letter-spacing: -1.5px;
+}
+.hero-carousel .hero p {
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.hero-carousel .hero-img {
+  height: calc(100% - 24px);
+  width: 36%;
+  top: 12px;
+  bottom: 12px;
+  right: 4%;
+  max-height: 355px;
+}
+.hero-carousel .hero:before {
+  top: -300px;
+  width: 42%;
+}
+.hero-carousel .hero:after {
+  height: 78px;
+}
+.hero-carousel .hero-tag {
+  padding: 8px 12px;
+  font-size: 10px;
+  bottom: 15px;
+  right: 18px;
+}
+.hero-controls {
+  min-height: 38px;
+  padding: 7px 0 3px;
+  gap: 15px;
+}
+.hero-autoplay {
+  padding: 5px 9px;
+}
+.hero-carousel + .benefits {
+  padding: 18px 0;
+}
+.discover-below {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 11px;
+  margin: 12px auto 0;
+  min-height: 30px;
+  padding: 5px 14px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  color: #7b8597;
+  font-size: 10px;
+  letter-spacing: 0.3px;
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease;
+}
+.discover-below:hover {
+  color: var(--blue);
+  background: #edf3ff;
+  border-color: #dce7ff;
+}
+.discover-chevron {
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  rotate: 45deg;
+  animation: discover-bounce 1.8s ease-in-out infinite;
+}
+@keyframes discover-bounce {
+  0%,
+  100% {
+    translate: 0 -2px;
+  }
+  50% {
+    translate: 0 3px;
+  }
+}
+.home-products {
+  margin-top: 18px;
+  scroll-margin-top: 105px;
+}
+@media (min-width: 1700px) {
+  .hero-carousel .hero-copy {
+    padding: 35px 55px;
+  }
+  .hero-carousel .hero-img {
+    right: 7%;
+  }
+}
+@media (max-width: 1000px) and (min-width: 651px) {
+  .hero-carousel .hero-copy {
+    padding: 26px 30px;
+    width: 65%;
+  }
+  .hero-carousel .hero h1 {
+    font-size: 34px;
+  }
+  .hero-carousel .hero-img {
+    width: 36%;
+    right: 0;
+  }
+}
+@media (max-width: 650px) {
+  .hero-carousel .hero {
+    min-height: 370px;
+    margin-top: 15px;
+  }
+  .hero-carousel .hero-copy {
+    width: 100%;
+    padding: 22px;
+  }
+  .hero-carousel .hero h1 {
+    font-size: clamp(25px, 6.8vw, 31px);
+    margin: 10px 0;
+    letter-spacing: -0.8px;
+  }
+  .hero-carousel .hero p {
+    max-width: 235px;
+    font-size: 11px;
+    margin-bottom: 14px;
+  }
+  .hero-carousel .hero .btn {
+    padding: 11px 14px;
+    font-size: 10px;
+  }
+  .hero-carousel .hero-img {
+    width: 48%;
+    height: 178px;
+    max-height: none;
+    top: auto;
+    bottom: 0;
+    right: 0;
+  }
+  .hero-carousel .hero:before {
+    width: 40%;
+    height: 350px;
+    top: 110px;
+    right: -85px;
+  }
+  .hero-carousel .hero:after {
+    height: 45px;
+  }
+  .hero-carousel .hero-tag {
+    left: 20px;
+    right: auto;
+    bottom: 15px;
+    font-size: 8px;
+  }
+  .hero-carousel + .benefits {
+    padding: 15px 0;
+    gap: 14px 8px;
+  }
+  .discover-below {
+    margin-top: 9px;
+    font-size: 9px;
+  }
+  .home-products {
+    margin-top: 14px;
+    scroll-margin-top: 125px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .discover-chevron {
+    animation: none;
+  }
+}

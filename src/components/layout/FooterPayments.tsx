@@ -56,20 +56,14 @@ export default function FooterPayments() {
         </svg>
       </div>
       <div className="payment-local">
-        <svg
-          className="pix-badge"
-          viewBox="0 0 94 32"
-          role="img"
-          aria-label="Pix"
-        >
-          <path
-            fill="#32bca9"
-            d="m13 3 6 6-4 4a2 2 0 0 1-3 0L8 9Zm8 8 5 5-5 5-5-5Zm-15 0 5 5-5 5-5-5Zm7 8 6 6-6 6-6-6 5-5a2 2 0 0 1 3 0Z"
-          />
-          <text x="34" y="24" className="pix-word">
-            pix
-          </text>
-        </svg>
+        <img
+          className="pix-official-logo"
+          src="/assets/pix-logo.webp"
+          alt="Pix — powered by Banco Central"
+          width="960"
+          height="341"
+          loading="lazy"
+        />
         <span className="payment-divider" aria-hidden="true" />
         <svg
           className="boleto-badge"

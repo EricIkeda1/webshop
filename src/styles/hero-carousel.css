@@ -1,0 +1,204 @@
+.hero-carousel {
+  position: relative;
+}
+.hero-carousel .hero {
+  min-height: 530px;
+  border-radius: 16px;
+}
+.hero-carousel .hero-copy {
+  padding: 60px;
+  width: 58%;
+}
+.hero-carousel .hero h1 {
+  font-size: clamp(38px, 3.6vw, 64px);
+  line-height: 1.15;
+  letter-spacing: -2px;
+}
+.hero-carousel .hero p {
+  font-size: 15px;
+  max-width: 440px;
+  line-height: 1.7;
+}
+.hero-carousel .hero-img {
+  width: 43%;
+  height: 470px;
+  right: 3%;
+  top: 18px;
+}
+.hero-carousel .hero:before {
+  height: 780px;
+  width: 48%;
+  top: -250px;
+  right: -35px;
+}
+.hero-carousel .hero:after {
+  width: 43%;
+  height: 125px;
+}
+.hero-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  padding: 15px 0 5px;
+  min-height: 48px;
+}
+.hero-controls .dots {
+  margin: 0;
+}
+.hero-controls .dots button {
+  width: 22px;
+  height: 22px;
+  background: transparent;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+.hero-controls .dots button::after {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 10px;
+  background: #cdd2dd;
+  transition:
+    width 200ms ease,
+    background 200ms ease;
+}
+.hero-controls .dots button.active::after {
+  width: 20px;
+  background: var(--blue);
+}
+.hero-counter {
+  font-size: 11px;
+  font-weight: 700;
+  color: #3b465a;
+  letter-spacing: 0.5px;
+}
+.hero-counter span {
+  color: #a0a7b5;
+  font-weight: 400;
+}
+.hero-autoplay {
+  font-size: 11px;
+  color: #727b8d;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: #fff;
+}
+.hero-progress {
+  height: 2px;
+  background: #e6eaf0;
+  border-radius: 4px;
+  margin-top: 3px;
+  overflow: hidden;
+}
+.hero-progress > span {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: #075cff;
+  transform-origin: left;
+  animation: hero-timer 5s linear both;
+}
+.hero-carousel.is-paused .hero-progress > span {
+  animation-play-state: paused;
+}
+@keyframes hero-timer {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@media (min-width: 1700px) {
+  .hero-carousel .hero {
+    min-height: 590px;
+  }
+  .hero-carousel .hero-copy {
+    padding: 75px;
+  }
+  .hero-carousel .hero-img {
+    height: 530px;
+    right: 5%;
+  }
+}
+@media (max-width: 1000px) {
+  .hero-carousel .hero {
+    min-height: 460px;
+  }
+  .hero-carousel .hero-copy {
+    padding: 36px;
+    width: 62%;
+  }
+  .hero-carousel .hero h1 {
+    font-size: 39px;
+  }
+  .hero-carousel .hero p {
+    font-size: 13px;
+    max-width: 300px;
+  }
+  .hero-carousel .hero-img {
+    width: 42%;
+    height: 380px;
+    top: 50px;
+    right: -1%;
+  }
+}
+@media (max-width: 650px) {
+  .hero-carousel .hero {
+    min-height: 495px;
+    border-radius: 12px;
+    align-items: flex-start;
+  }
+  .hero-carousel .hero-copy {
+    width: 100%;
+    padding: 28px 23px;
+  }
+  .hero-carousel .hero h1 {
+    font-size: clamp(28px, 7.5vw, 38px);
+    letter-spacing: -1.2px;
+    max-width: 100%;
+  }
+  .hero-carousel .hero p {
+    font-size: 12px;
+    max-width: 250px;
+    margin-bottom: 16px;
+  }
+  .hero-carousel .hero .btn {
+    font-size: 11px;
+    padding: 12px 18px;
+  }
+  .hero-carousel .hero-img {
+    width: 65%;
+    height: 250px;
+    right: -1%;
+    top: auto;
+    bottom: 0;
+  }
+  .hero-carousel .hero:before {
+    width: 43%;
+    height: 480px;
+    top: 135px;
+    right: -100px;
+  }
+  .hero-carousel .hero:after {
+    width: 60%;
+    height: 65px;
+  }
+  .hero-carousel .hero-tag {
+    bottom: 16px;
+    right: auto;
+    left: 20px;
+  }
+  .hero-controls {
+    gap: 14px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-progress {
+    display: none;
+  }
+}

@@ -26,7 +26,7 @@ export function useScrollReveal(
     function observe() {
       element!
         .querySelectorAll(
-          ".hero, .benefits, .editorial, .newsletter, .section-head",
+          ".hero, .editorial, .newsletter, .section-head, .institutional-section-label, .institutional-section-content, .institutional-values > div, .institutional-callout",
         )
         .forEach((target) => {
           if (!target.classList.contains("reveal")) {

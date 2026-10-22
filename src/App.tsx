@@ -10,6 +10,7 @@ import CheckoutPage from "./pages/CheckoutPage";
 import AccountPage from "./pages/AccountPage";
 import OrderPage from "./pages/OrderPage";
 import HelpPage from "./pages/HelpPage";
+import InstitutionalPage from "./pages/InstitutionalPage";
 import NotFoundPage from "./pages/NotFoundPage";
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
             <Route path="checkout" element={<CheckoutPage />} />
             <Route path="conta" element={<AccountPage />} />
             <Route path="pedido/:id" element={<OrderPage />} />
+            <Route path="institucional" element={<InstitutionalPage />} />
             <Route path="ajuda" element={<HelpPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
