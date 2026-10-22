@@ -1,3 +1,4 @@
+import ProductImage from "../ui/ProductImage";
 import { Link } from "react-router-dom";
 import type { CartItem } from "../../types/store";
 import { useStore } from "../../contexts/StoreContext";
@@ -15,9 +16,12 @@ export default function CartItemRow({
   const { updateQuantity, removeFromCart } = useStore();
   const { product, quantity } = item;
   return (
-    <div className="cart-row">
+    <div className={`cart-row ${readOnly ? "" : "editable-cart-row"}`}>
       <Link to={`/produto/${product.id}`}>
-        <img src={`/api/catalog/products/${product.id}/thumbnail`} alt={product.title} />
+        <ProductImage
+          src={`/api/catalog/products/${product.id}/thumbnail`}
+          alt={product.title}
+        />
       </Link>
       <div className="cart-row-info">
         <h3>{product.title}</h3>

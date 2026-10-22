@@ -7,7 +7,7 @@ import EmptyState from "../components/ui/EmptyState";
 export default function CartPage() {
   const { cart, count, coupon, applyCoupon } = useStore();
   return (
-    <section className="page">
+    <section className="page cart-page">
       <div className="breadcrumb">
         <Link to="/">Início</Link> / Carrinho
       </div>

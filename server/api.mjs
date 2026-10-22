@@ -1,4 +1,5 @@
 import { getProductPage, getProduct } from "./services/catalog.mjs";
+import { readBundledImage } from "./services/productImages.mjs";
 import { lookupAddress, PostalLookupError } from "./services/address.mjs";
 import { quoteShipping, ShippingError } from "./services/shipping.mjs";
 const limits = new Map();
@@ -126,6 +127,20 @@ export async function handleApi(req, res) {
         imageUrl.hostname !== "cdn.dummyjson.com"
       ) {
         json(res, 404, { message: "Imagem indisponível." });
+        return true;
+      }
+      const bundled = await readBundledImage(
+        product,
+        productMatch[2],
+        Number(productMatch[3] ?? 0),
+      );
+      if (bundled) {
+        res.writeHead(200, {
+          "Content-Type": bundled.type,
+          "Cache-Control": "public, max-age=3600",
+          "X-Content-Type-Options": "nosniff",
+        });
+        res.end(bundled.bytes);
         return true;
       }
       const response = await fetch(imageUrl, {

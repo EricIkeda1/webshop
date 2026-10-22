@@ -5,6 +5,7 @@ import { categories } from "../../utils/categories";
 import { money } from "../../utils/format";
 import Brand from "./Brand";
 import Icon from "../ui/Icon";
+import MobileCategoryMenu from "./MobileCategoryMenu";
 export default function Header() {
   const { count, subtotal } = useStore();
   const navigate = useNavigate();
@@ -108,6 +109,12 @@ export default function Header() {
           </span>
         </div>
       </nav>
+      <MobileCategoryMenu
+        open={menu}
+        onClose={() => setMenu(false)}
+        choose={choose}
+        active={params.get("categoria") ?? "Tecnologia"}
+      />
       {menu && (
         <div className="wrap menu-panel">
           {Object.keys(categories).map((category) => (

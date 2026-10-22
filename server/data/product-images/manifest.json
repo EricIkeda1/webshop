@@ -1,0 +1,1062 @@
+{
+  "2/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/beauty/eyeshadow-palette-with-mirror/thumbnail.webp",
+    "file": "2-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "3/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/beauty/powder-canister/thumbnail.webp",
+    "file": "3-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "6/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/thumbnail.webp",
+    "file": "6-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "5/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/beauty/red-nail-polish/thumbnail.webp",
+    "file": "5-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "8/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/fragrances/dior-j'adore/thumbnail.webp",
+    "file": "8-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "4/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/beauty/red-lipstick/thumbnail.webp",
+    "file": "4-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "7/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/fragrances/chanel-coco-noir-eau-de/thumbnail.webp",
+    "file": "7-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "1/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/thumbnail.webp",
+    "file": "1-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "9/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/fragrances/dolce-shine-eau-de/thumbnail.webp",
+    "file": "9-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "10/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/thumbnail.webp",
+    "file": "10-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "8/image-0": {
+    "source": "https://cdn.dummyjson.com/product-images/fragrances/dior-j'adore/1.webp",
+    "file": "8-image-0.webp",
+    "type": "image/webp"
+  },
+  "8/image-1": {
+    "source": "https://cdn.dummyjson.com/product-images/fragrances/dior-j'adore/2.webp",
+    "file": "8-image-1.webp",
+    "type": "image/webp"
+  },
+  "8/image-2": {
+    "source": "https://cdn.dummyjson.com/product-images/fragrances/dior-j'adore/3.webp",
+    "file": "8-image-2.webp",
+    "type": "image/webp"
+  },
+  "10/image-0": {
+    "source": "https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/1.webp",
+    "file": "10-image-0.webp",
+    "type": "image/webp"
+  },
+  "10/image-2": {
+    "source": "https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/3.webp",
+    "file": "10-image-2.webp",
+    "type": "image/webp"
+  },
+  "11/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/furniture/annibale-colombo-bed/thumbnail.webp",
+    "file": "11-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "10/image-1": {
+    "source": "https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/2.webp",
+    "file": "10-image-1.webp",
+    "type": "image/webp"
+  },
+  "12/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/furniture/annibale-colombo-sofa/thumbnail.webp",
+    "file": "12-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "14/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/furniture/knoll-saarinen-executive-conference-chair/thumbnail.webp",
+    "file": "14-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "13/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/furniture/bedside-table-african-cherry/thumbnail.webp",
+    "file": "13-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "16/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/groceries/apple/thumbnail.webp",
+    "file": "16-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "17/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/groceries/beef-steak/thumbnail.webp",
+    "file": "17-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "18/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/groceries/cat-food/thumbnail.webp",
+    "file": "18-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "15/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/furniture/wooden-bathroom-sink-with-mirror/thumbnail.webp",
+    "file": "15-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "20/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/groceries/cooking-oil/thumbnail.webp",
+    "file": "20-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "21/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/groceries/cucumber/thumbnail.webp",
+    "file": "21-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "19/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/groceries/chicken-meat/thumbnail.webp",
+    "file": "19-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "22/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/groceries/dog-food/thumbnail.webp",
+    "file": "22-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "24/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/groceries/fish-steak/thumbnail.webp",
+    "file": "24-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "23/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/groceries/eggs/thumbnail.webp",
+    "file": "23-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "26/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/groceries/green-chili-pepper/thumbnail.webp",
+    "file": "26-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "25/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/groceries/green-bell-pepper/thumbnail.webp",
+    "file": "25-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "27/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/groceries/honey-jar/thumbnail.webp",
+    "file": "27-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "32/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/groceries/milk/thumbnail.webp",
+    "file": "32-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "29/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/groceries/juice/thumbnail.webp",
+    "file": "29-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "30/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/groceries/kiwi/thumbnail.webp",
+    "file": "30-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "31/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/groceries/lemon/thumbnail.webp",
+    "file": "31-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "28/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/groceries/ice-cream/thumbnail.webp",
+    "file": "28-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "33/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/groceries/mulberry/thumbnail.webp",
+    "file": "33-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "35/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/groceries/potatoes/thumbnail.webp",
+    "file": "35-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "34/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/groceries/nescafe-coffee/thumbnail.webp",
+    "file": "34-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "36/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/groceries/protein-powder/thumbnail.webp",
+    "file": "36-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "38/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/groceries/rice/thumbnail.webp",
+    "file": "38-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "41/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/groceries/tissue-paper-box/thumbnail.webp",
+    "file": "41-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "37/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/groceries/red-onions/thumbnail.webp",
+    "file": "37-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "39/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/groceries/soft-drinks/thumbnail.webp",
+    "file": "39-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "40/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/groceries/strawberry/thumbnail.webp",
+    "file": "40-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "43/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/home-decoration/decoration-swing/thumbnail.webp",
+    "file": "43-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "42/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/groceries/water/thumbnail.webp",
+    "file": "42-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "44/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/home-decoration/family-tree-photo-frame/thumbnail.webp",
+    "file": "44-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "48/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/bamboo-spatula/thumbnail.webp",
+    "file": "48-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "45/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/home-decoration/house-showpiece-plant/thumbnail.webp",
+    "file": "45-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "46/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/home-decoration/plant-pot/thumbnail.webp",
+    "file": "46-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "47/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/home-decoration/table-lamp/thumbnail.webp",
+    "file": "47-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "47/image-0": {
+    "source": "https://cdn.dummyjson.com/product-images/home-decoration/table-lamp/1.webp",
+    "file": "47-image-0.webp",
+    "type": "image/webp"
+  },
+  "49/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/black-aluminium-cup/thumbnail.webp",
+    "file": "49-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "53/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/chopping-board/thumbnail.webp",
+    "file": "53-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "51/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/boxed-blender/thumbnail.webp",
+    "file": "51-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "50/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/black-whisk/thumbnail.webp",
+    "file": "50-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "56/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/electric-stove/thumbnail.webp",
+    "file": "56-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "58/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/fork/thumbnail.webp",
+    "file": "58-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "54/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/citrus-squeezer-yellow/thumbnail.webp",
+    "file": "54-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "52/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/carbon-steel-wok/thumbnail.webp",
+    "file": "52-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "55/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/egg-slicer/thumbnail.webp",
+    "file": "55-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "59/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/glass/thumbnail.webp",
+    "file": "59-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "64/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/knife/thumbnail.webp",
+    "file": "64-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "60/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/grater-black/thumbnail.webp",
+    "file": "60-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "62/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/ice-cube-tray/thumbnail.webp",
+    "file": "62-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "63/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/kitchen-sieve/thumbnail.webp",
+    "file": "63-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "61/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/hand-blender/thumbnail.webp",
+    "file": "61-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "57/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/fine-mesh-strainer/thumbnail.webp",
+    "file": "57-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "66/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/microwave-oven/thumbnail.webp",
+    "file": "66-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "65/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/lunch-box/thumbnail.webp",
+    "file": "65-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "67/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/mug-tree-stand/thumbnail.webp",
+    "file": "67-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "69/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/plate/thumbnail.webp",
+    "file": "69-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "71/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/silver-pot-with-glass-cap/thumbnail.webp",
+    "file": "71-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "68/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/pan/thumbnail.webp",
+    "file": "68-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "70/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/red-tongs/thumbnail.webp",
+    "file": "70-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "74/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/spoon/thumbnail.webp",
+    "file": "74-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "76/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/wooden-rolling-pin/thumbnail.webp",
+    "file": "76-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "72/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/slotted-turner/thumbnail.webp",
+    "file": "72-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "78/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/laptops/apple-macbook-pro-14-inch-space-grey/thumbnail.webp",
+    "file": "78-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "73/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/spice-rack/thumbnail.webp",
+    "file": "73-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "75/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/tray/thumbnail.webp",
+    "file": "75-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "77/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/kitchen-accessories/yellow-peeler/thumbnail.webp",
+    "file": "77-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "78/image-1": {
+    "source": "https://cdn.dummyjson.com/product-images/laptops/apple-macbook-pro-14-inch-space-grey/2.webp",
+    "file": "78-image-1.webp",
+    "type": "image/webp"
+  },
+  "79/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/laptops/asus-zenbook-pro-dual-screen-laptop/thumbnail.webp",
+    "file": "79-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "80/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/laptops/huawei-matebook-x-pro/thumbnail.webp",
+    "file": "80-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "78/image-0": {
+    "source": "https://cdn.dummyjson.com/product-images/laptops/apple-macbook-pro-14-inch-space-grey/1.webp",
+    "file": "78-image-0.webp",
+    "type": "image/webp"
+  },
+  "78/image-2": {
+    "source": "https://cdn.dummyjson.com/product-images/laptops/apple-macbook-pro-14-inch-space-grey/3.webp",
+    "file": "78-image-2.webp",
+    "type": "image/webp"
+  },
+  "82/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/laptops/new-dell-xps-13-9300-laptop/thumbnail.webp",
+    "file": "82-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "81/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/laptops/lenovo-yoga-920/thumbnail.webp",
+    "file": "81-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "82/image-0": {
+    "source": "https://cdn.dummyjson.com/product-images/laptops/new-dell-xps-13-9300-laptop/1.webp",
+    "file": "82-image-0.webp",
+    "type": "image/webp"
+  },
+  "82/image-1": {
+    "source": "https://cdn.dummyjson.com/product-images/laptops/new-dell-xps-13-9300-laptop/2.webp",
+    "file": "82-image-1.webp",
+    "type": "image/webp"
+  },
+  "84/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mens-shirts/gigabyte-aorus-men-tshirt/thumbnail.webp",
+    "file": "84-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "83/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mens-shirts/blue-&-black-check-shirt/thumbnail.webp",
+    "file": "83-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "82/image-2": {
+    "source": "https://cdn.dummyjson.com/product-images/laptops/new-dell-xps-13-9300-laptop/3.webp",
+    "file": "82-image-2.webp",
+    "type": "image/webp"
+  },
+  "87/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mens-shirts/men-check-shirt/thumbnail.webp",
+    "file": "87-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "85/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mens-shirts/man-plaid-shirt/thumbnail.webp",
+    "file": "85-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "91/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-&-red/thumbnail.webp",
+    "file": "91-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "86/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mens-shirts/man-short-sleeve-shirt/thumbnail.webp",
+    "file": "86-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "88/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mens-shoes/nike-air-jordan-1-red-and-black/thumbnail.webp",
+    "file": "88-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "89/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mens-shoes/nike-baseball-cleats/thumbnail.webp",
+    "file": "89-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "92/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-red/thumbnail.webp",
+    "file": "92-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "90/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mens-shoes/puma-future-rider-trainers/thumbnail.webp",
+    "file": "90-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "93/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mens-watches/brown-leather-belt-watch/thumbnail.webp",
+    "file": "93-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "94/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mens-watches/longines-master-collection/thumbnail.webp",
+    "file": "94-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "100/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/thumbnail.webp",
+    "file": "100-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "96/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mens-watches/rolex-cellini-moonphase/thumbnail.webp",
+    "file": "96-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "95/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mens-watches/rolex-cellini-date-black-dial/thumbnail.webp",
+    "file": "95-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "98/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mens-watches/rolex-submariner-watch/thumbnail.webp",
+    "file": "98-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "97/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mens-watches/rolex-datejust/thumbnail.webp",
+    "file": "97-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "99/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mobile-accessories/amazon-echo-plus/thumbnail.webp",
+    "file": "99-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "101/image-0": {
+    "source": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods-max-silver/1.webp",
+    "file": "101-image-0.webp",
+    "type": "image/webp"
+  },
+  "102/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpower-wireless-charger/thumbnail.webp",
+    "file": "102-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "100/image-0": {
+    "source": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/1.webp",
+    "file": "100-image-0.webp",
+    "type": "image/webp"
+  },
+  "103/image-0": {
+    "source": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-homepod-mini-cosmic-grey/1.webp",
+    "file": "103-image-0.webp",
+    "type": "image/webp"
+  },
+  "100/image-2": {
+    "source": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/3.webp",
+    "file": "100-image-2.webp",
+    "type": "image/webp"
+  },
+  "101/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods-max-silver/thumbnail.webp",
+    "file": "101-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "105/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-magsafe-battery-pack/thumbnail.webp",
+    "file": "105-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "103/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-homepod-mini-cosmic-grey/thumbnail.webp",
+    "file": "103-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "100/image-1": {
+    "source": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/2.webp",
+    "file": "100-image-1.webp",
+    "type": "image/webp"
+  },
+  "108/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/thumbnail.webp",
+    "file": "108-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "104/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-iphone-charger/thumbnail.webp",
+    "file": "104-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "111/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-stick-monopod/thumbnail.webp",
+    "file": "111-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "106/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/thumbnail.webp",
+    "file": "106-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "107/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mobile-accessories/beats-flex-wireless-earphones/thumbnail.webp",
+    "file": "107-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "109/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mobile-accessories/monopod/thumbnail.webp",
+    "file": "109-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "110/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-lamp-with-iphone/thumbnail.webp",
+    "file": "110-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "112/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/mobile-accessories/tv-studio-camera-pedestal/thumbnail.webp",
+    "file": "112-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "113/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/motorcycle/generic-motorcycle/thumbnail.webp",
+    "file": "113-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "116/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/motorcycle/scooter-motorcycle/thumbnail.webp",
+    "file": "116-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "117/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/motorcycle/sportbike-motorcycle/thumbnail.webp",
+    "file": "117-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "118/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/skin-care/attitude-super-leaves-hand-soap/thumbnail.webp",
+    "file": "118-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "121/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/smartphones/iphone-5s/thumbnail.webp",
+    "file": "121-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "119/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/skin-care/olay-ultra-moisture-shea-butter-body-wash/thumbnail.webp",
+    "file": "119-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "115/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/thumbnail.webp",
+    "file": "115-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "114/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/motorcycle/kawasaki-z800/thumbnail.webp",
+    "file": "114-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "125/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/smartphones/oppo-a57/thumbnail.webp",
+    "file": "125-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "126/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/smartphones/oppo-f19-pro-plus/thumbnail.webp",
+    "file": "126-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "120/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/skin-care/vaseline-men-body-and-face-lotion/thumbnail.webp",
+    "file": "120-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "127/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/smartphones/oppo-k1/thumbnail.webp",
+    "file": "127-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "128/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/smartphones/realme-c35/thumbnail.webp",
+    "file": "128-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "122/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/smartphones/iphone-6/thumbnail.webp",
+    "file": "122-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "129/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/smartphones/realme-x/thumbnail.webp",
+    "file": "129-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "131/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s7/thumbnail.webp",
+    "file": "131-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "123/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/smartphones/iphone-13-pro/thumbnail.webp",
+    "file": "123-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "133/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s10/thumbnail.webp",
+    "file": "133-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "134/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/smartphones/vivo-s1/thumbnail.webp",
+    "file": "134-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "132/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s8/thumbnail.webp",
+    "file": "132-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "135/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/smartphones/vivo-v9/thumbnail.webp",
+    "file": "135-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "124/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/smartphones/iphone-x/thumbnail.webp",
+    "file": "124-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "136/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/smartphones/vivo-x21/thumbnail.webp",
+    "file": "136-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "130/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/smartphones/realme-xt/thumbnail.webp",
+    "file": "130-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "138/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/sports-accessories/baseball-ball/thumbnail.webp",
+    "file": "138-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "139/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/sports-accessories/baseball-glove/thumbnail.webp",
+    "file": "139-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "137/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/sports-accessories/american-football/thumbnail.webp",
+    "file": "137-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "140/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/sports-accessories/basketball/thumbnail.webp",
+    "file": "140-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "143/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-bat/thumbnail.webp",
+    "file": "143-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "142/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-ball/thumbnail.webp",
+    "file": "142-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "141/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/sports-accessories/basketball-rim/thumbnail.webp",
+    "file": "141-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "149/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/sports-accessories/iron-golf/thumbnail.webp",
+    "file": "149-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "150/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/sports-accessories/metal-baseball-bat/thumbnail.webp",
+    "file": "150-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "144/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-helmet/thumbnail.webp",
+    "file": "144-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "145/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-wicket/thumbnail.webp",
+    "file": "145-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "146/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/sports-accessories/feather-shuttlecock/thumbnail.webp",
+    "file": "146-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "148/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/sports-accessories/golf-ball/thumbnail.webp",
+    "file": "148-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "147/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/sports-accessories/football/thumbnail.webp",
+    "file": "147-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "151/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/sports-accessories/tennis-ball/thumbnail.webp",
+    "file": "151-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "152/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/sports-accessories/tennis-racket/thumbnail.webp",
+    "file": "152-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "153/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/sports-accessories/volleyball/thumbnail.webp",
+    "file": "153-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "155/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/sunglasses/classic-sun-glasses/thumbnail.webp",
+    "file": "155-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "156/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/sunglasses/green-and-black-glasses/thumbnail.webp",
+    "file": "156-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "154/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/sunglasses/black-sun-glasses/thumbnail.webp",
+    "file": "154-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "160/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-s8-plus-grey/thumbnail.webp",
+    "file": "160-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "157/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/sunglasses/party-glasses/thumbnail.webp",
+    "file": "157-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "158/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/sunglasses/sunglasses/thumbnail.webp",
+    "file": "158-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "159/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/tablets/ipad-mini-2021-starlight/thumbnail.webp",
+    "file": "159-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "164/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/tops/gray-dress/thumbnail.webp",
+    "file": "164-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "167/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/vehicle/300-touring/thumbnail.webp",
+    "file": "167-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "162/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/tops/blue-frock/thumbnail.webp",
+    "file": "162-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "161/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-white/thumbnail.webp",
+    "file": "161-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "163/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/tops/girl-summer-dress/thumbnail.webp",
+    "file": "163-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "168/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/vehicle/charger-sxt-rwd/thumbnail.webp",
+    "file": "168-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "171/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/vehicle/pacifica-touring/thumbnail.webp",
+    "file": "171-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "165/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/tops/short-frock/thumbnail.webp",
+    "file": "165-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "166/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/tops/tartan-dress/thumbnail.webp",
+    "file": "166-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "175/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/womens-bags/white-faux-leather-backpack/thumbnail.webp",
+    "file": "175-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "169/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/vehicle/dodge-hornet-gt-plus/thumbnail.webp",
+    "file": "169-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "170/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/vehicle/durango-sxt-rwd/thumbnail.webp",
+    "file": "170-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "173/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/womens-bags/heshe-women's-leather-bag/thumbnail.webp",
+    "file": "173-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "172/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/womens-bags/blue-women's-handbag/thumbnail.webp",
+    "file": "172-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "174/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/womens-bags/prada-women-bag/thumbnail.webp",
+    "file": "174-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "179/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/womens-dresses/corset-with-black-skirt/thumbnail.webp",
+    "file": "179-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "176/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/womens-bags/women-handbag-black/thumbnail.webp",
+    "file": "176-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "177/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/womens-dresses/black-women's-gown/thumbnail.webp",
+    "file": "177-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "182/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/womens-jewellery/green-crystal-earring/thumbnail.webp",
+    "file": "182-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "180/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/womens-dresses/dress-pea/thumbnail.webp",
+    "file": "180-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "178/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/womens-dresses/corset-leather-with-skirt/thumbnail.webp",
+    "file": "178-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "181/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/womens-dresses/marni-red-&-black-suit/thumbnail.webp",
+    "file": "181-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "183/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/womens-jewellery/green-oval-earring/thumbnail.webp",
+    "file": "183-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "184/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/womens-jewellery/tropical-earring/thumbnail.webp",
+    "file": "184-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "186/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/womens-shoes/calvin-klein-heel-shoes/thumbnail.webp",
+    "file": "186-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "187/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/womens-shoes/golden-shoes-woman/thumbnail.webp",
+    "file": "187-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "185/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/womens-shoes/black-&-brown-slipper/thumbnail.webp",
+    "file": "185-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "188/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/womens-shoes/pampi-shoes/thumbnail.webp",
+    "file": "188-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "190/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/womens-watches/iwc-ingenieur-automatic-steel/thumbnail.webp",
+    "file": "190-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "189/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/womens-shoes/red-shoes/thumbnail.webp",
+    "file": "189-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "192/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/womens-watches/rolex-datejust-women/thumbnail.webp",
+    "file": "192-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "191/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/womens-watches/rolex-cellini-moonphase/thumbnail.webp",
+    "file": "191-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "194/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/womens-watches/women's-wrist-watch/thumbnail.webp",
+    "file": "194-thumbnail.webp",
+    "type": "image/webp"
+  },
+  "193/thumbnail": {
+    "source": "https://cdn.dummyjson.com/product-images/womens-watches/watch-gold-for-women/thumbnail.webp",
+    "file": "193-thumbnail.webp",
+    "type": "image/webp"
+  }
+}

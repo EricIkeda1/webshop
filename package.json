@@ -1,7 +1,7 @@
 {
   "name": "eyi-store-react",
   "private": true,
-  "version": "2.0.1",
+  "version": "2.1.1",
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
@@ -9,8 +9,9 @@
     "preview": "node server/index.mjs",
     "typecheck": "tsc -b",
     "format": "prettier --write src server api scripts index.html vite.config.ts tsconfig.json package.json README.md",
-    "test": "node scripts/test-feed.mjs && node scripts/test-address.mjs && node scripts/test-server.mjs && node scripts/test-vercel.mjs",
-    "start": "node server/index.mjs"
+    "test": "node scripts/test-feed.mjs && node scripts/test-address.mjs && node scripts/test-server.mjs && node scripts/test-vercel.mjs && node scripts/test-images.mjs && node scripts/test-carousel.mjs",
+    "start": "node server/index.mjs",
+    "sync:images": "node scripts/sync-product-images.mjs"
   },
   "dependencies": {
     "react": "^19.2.0",

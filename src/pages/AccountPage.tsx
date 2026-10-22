@@ -1,3 +1,5 @@
+import { useState } from "react";
+import MobileSheet from "../components/ui/MobileSheet";
 import { Link } from "react-router-dom";
 import { useStore } from "../contexts/StoreContext";
 import { money } from "../utils/format";
@@ -5,8 +7,9 @@ import EmptyState from "../components/ui/EmptyState";
 import Icon from "../components/ui/Icon";
 export default function AccountPage() {
   const { orders, favorites, count } = useStore();
+  const [detail, setDetail] = useState("");
   return (
-    <section className="page">
+    <section className="page account-page">
       <div className="breadcrumb">
         <Link to="/">Início</Link> / Minha conta
       </div>
@@ -16,8 +19,72 @@ export default function AccountPage() {
           <p>Seus favoritos e pedidos, em um só lugar.</p>
         </div>
       </div>
+      <div className="mobile-account">
+        <div className="account-greeting">
+          <span className="account-avatar">EY</span>
+          <div>
+            <h2>Olá, bem-vindo</h2>
+            <p>Suas escolhas e seus pedidos estão aqui.</p>
+          </div>
+        </div>
+        <div className="mobile-menu-list account-menu">
+          <button
+            onClick={() =>
+              document
+                .getElementById("account-orders")
+                ?.scrollIntoView({
+                  behavior: window.matchMedia(
+                    "(prefers-reduced-motion: reduce)",
+                  ).matches
+                    ? "instant"
+                    : "smooth",
+                })
+            }
+          >
+            <Icon name="box" />
+            <span>Meus pedidos</span>
+            <Icon name="chevron" />
+          </button>
+          {[
+            ["Meus dados", "user"],
+            ["Endereços", "pin"],
+            ["Formas de pagamento", "card"],
+          ].map(([name, icon]) => (
+            <button key={name} onClick={() => setDetail(name)}>
+              <Icon name={icon} />
+              <span>{name}</span>
+              <Icon name="chevron" />
+            </button>
+          ))}
+          <button onClick={() => window.location.reload()}>
+            <Icon name="logout" />
+            <span>Sair da demonstração</span>
+            <Icon name="chevron" />
+          </button>
+        </div>
+      </div>
+      {detail && (
+        <MobileSheet open title={detail} onClose={() => setDetail("")}>
+          <p className="sheet-description">
+            {detail === "Meus dados"
+              ? "Esta conta é demonstrativa e não possui cadastro. Os favoritos e pedidos ficam salvos apenas neste navegador."
+              : detail === "Endereços"
+                ? "Você pode informar o endereço e buscar seu CEP ao finalizar a compra. Esta demonstração não possui uma agenda de endereços."
+                : "No checkout você pode conhecer as opções de pagamento da demonstração. Nenhum valor é cobrado e nenhum cartão é salvo."}
+          </p>
+          <Link
+            className="btn full-width"
+            to={detail === "Meus dados" ? "/favoritos" : "/carrinho"}
+            onClick={() => setDetail("")}
+          >
+            {detail === "Meus dados"
+              ? "Ver meus favoritos"
+              : "Ir para o carrinho"}
+          </Link>
+        </MobileSheet>
+      )}
       <div className="cart-layout">
-        <div className="panel">
+        <div className="panel" id="account-orders">
           <h3>Meus pedidos</h3>
           {orders.length ? (
             orders.map((order) => (

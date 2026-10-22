@@ -6,6 +6,7 @@ import { categories } from "../utils/categories";
 import { money } from "../utils/format";
 import ProductGrid from "../components/product/ProductGrid";
 import Icon from "../components/ui/Icon";
+import MobileProductFilters from "../components/product/MobileProductFilters";
 export default function CatalogPage({ offers = false }: { offers?: boolean }) {
   const [params, setParams] = useSearchParams();
   const [filters, setFilters] = useState(false);
@@ -32,7 +33,7 @@ export default function CatalogPage({ offers = false }: { offers?: boolean }) {
       <div className="breadcrumb">
         <Link to="/">Início</Link> / {offers ? "Ofertas" : "Catálogo"}
       </div>
-      <section className="page">
+      <section className="page catalog-page">
         <div className="section-head">
           <div>
             <h2>
@@ -47,7 +48,7 @@ export default function CatalogPage({ offers = false }: { offers?: boolean }) {
             <p>Explore a seleção e toque em Ver mais para continuar.</p>
           </div>
           <select
-            className="sort"
+            className="sort desktop-sort"
             value={sort}
             onChange={(event) => setSort(event.target.value)}
             aria-label="Ordenar produtos"
@@ -58,15 +59,43 @@ export default function CatalogPage({ offers = false }: { offers?: boolean }) {
             <option value="rating">Melhor avaliação</option>
           </select>
         </div>
-        <button
-          className="filters-toggle"
-          onClick={() => setFilters(!filters)}
-          aria-expanded={filters}
-        >
-          <Icon name="filter" /> Filtrar produtos
-        </button>
+        <div className="mobile-catalog-toolbar">
+          <button
+            className="filter-pill"
+            onClick={() => setFilters(true)}
+            aria-haspopup="dialog"
+            aria-expanded={filters}
+          >
+            <Icon name="filter" /> Filtrar
+          </button>
+          <label className="sort-pill">
+            <Icon name="sort" />
+            <select
+              value={sort}
+              onChange={(event) => setSort(event.target.value)}
+              aria-label="Ordenar produtos no mobile"
+            >
+              <option value="featured">Ordenar</option>
+              <option value="low">Menor preço</option>
+              <option value="high">Maior preço</option>
+              <option value="rating">Melhor avaliação</option>
+            </select>
+          </label>
+        </div>
+        {filters && (
+          <MobileProductFilters
+            initial={{ category, maxPrice, rating }}
+            onClose={() => setFilters(false)}
+            onApply={(next) => {
+              chooseCategory(next.category);
+              setMaxPrice(next.maxPrice);
+              setRating(next.rating);
+              setFilters(false);
+            }}
+          />
+        )}
         <div className="catalog-layout">
-          <aside className={`sidebar ${filters ? "open" : ""}`}>
+          <aside className="sidebar">
             <h4>Categorias</h4>
             {Object.keys(categories).map((name) => (
               <label key={name}>

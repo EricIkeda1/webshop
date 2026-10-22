@@ -1,3 +1,4 @@
+import ProductImage from "../components/ui/ProductImage";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useStore } from "../contexts/StoreContext";
@@ -97,7 +98,7 @@ export default function HomePage() {
             <Link className="link" to={`/catalogo?categoria=${promo.category}`}>
               {promo.link}
             </Link>
-            <img
+            <ProductImage
               src={
                 products.find((product) => product.id === promo.id)?.thumbnail
               }

@@ -1,3 +1,4 @@
+import ProductImage from "../components/ui/ProductImage";
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useProductLookup } from "../hooks/useProductLookup";
@@ -47,7 +48,7 @@ export default function ProductPage() {
       </div>
       <section className="detail">
         <div>
-          <img
+          <ProductImage
             className="detail-main-img"
             src={images[image] ?? images[0]}
             alt={product.title}
@@ -60,7 +61,7 @@ export default function ProductPage() {
                 onClick={() => setImage(index)}
                 aria-label={`Imagem ${index + 1}`}
               >
-                <img
+                <ProductImage
                   src={source}
                   alt={`${product.title}, vista ${index + 1}`}
                 />

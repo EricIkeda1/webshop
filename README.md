@@ -2,6 +2,30 @@
 
 Loja fictícia com interface responsiva, catálogo paginado, carrossel automático, favoritos, carrinho, checkout e página Institucional. A entrada exige confirmação de que o site é demonstrativo.
 
+## Imagens e carrosséis · versão 2.1.1
+
+A cópia de segurança agora inclui as miniaturas dos 194 produtos e as fotos dos oito destaques (212 arquivos WebP). Elas são entregues pelas mesmas rotas `/api/catalog/products/...`, sem consultas externas de imagem quando a URL cadastrada corresponde à cópia local. O catálogo de produtos continua consultando a DummyJSON e recorrendo à cópia de segurança se a API falhar.
+
+As imagens ficam em `server/data/product-images/`, dentro da Function da Vercel, e não são expostas como uma pasta pública. O servidor só utiliza uma imagem local quando ela corresponde exatamente à origem registrada. Produtos novos ou com URLs diferentes seguem pelo proxy existente; quando uma foto não está disponível, a interface mostra “Imagem indisponível”. Esta cópia melhora a disponibilidade, mas pode apresentar a foto capturada durante a atualização do pacote.
+
+Para atualizar as imagens após atualizar `server/data/products.json`, execute `npm run sync:images`. Esse comando manual consulta o domínio fixo da DummyJSON, valida tipo e tamanho e salva as imagens conhecidas; não é necessário executá-lo no deploy. Inclua a pasta de imagens completa no repositório enviado à Vercel.
+
+O carrossel de produtos calcula seus grupos pela largura disponível, incluindo o último grupo parcial. Os indicadores acompanham a rolagem e se adaptam ao redimensionamento. No mobile os alvos de toque são maiores, preservando as bolinhas visuais.
+
+Verificação: compilação e testes de API, paginação, CEP, frete, Vercel, imagens durante indisponibilidade e grupos do carrossel aprovados. As fotos foram conferidas na prévia em áreas de 320 e 390 px, e o último grupo do carrossel foi alcançado pelo indicador correspondente. Não houve teste em aparelho físico nem deploy na sua conta Vercel.
+
+## Interface mobile · versão 2.1.0
+
+Em telas de até 650 px, a interface segue a referência EYI enviada: cabeçalho escuro com logo central, busca arredondada, menu de categorias em diálogo, quatro abas na navegação inferior, filtros em painel e cards em duas colunas. O carrinho continua disponível no cabeçalho. O desktop preserva a apresentação anterior.
+
+O banner mobile foi reduzido para mostrar os produtos mais cedo. A troca automática a cada 5 segundos, controles de pausa, carrossel de produtos, botão Ver mais, favoritos, carrinho, aviso inicial e páginas existentes foram mantidos. As preferências de redução de movimento continuam respeitadas.
+
+Os filtros mobile são editados antes da confirmação: **Aplicar filtros** atualiza o catálogo, **Limpar** restaura as opções do painel e fechar o painel descarta mudanças não aplicadas. Os diálogos usam foco contido, Escape e restauração de foco do navegador.
+
+A conta permanece demonstrativa: os itens Meus dados, Endereços e Formas de pagamento explicam o funcionamento e encaminham para as telas disponíveis. Não há autenticação ou armazenamento de cartões.
+
+A navegação, o menu, os filtros e a conta foram conferidos na prévia em área de 390 px. O problema de imagens identificado nessa revisão foi resolvido na versão 2.1.1 descrita acima.
+
 ## Rodar no computador
 
 Requer Node.js 22.x atualizado (22.12 ou superior dentro da linha 22).

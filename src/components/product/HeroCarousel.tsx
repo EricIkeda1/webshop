@@ -1,3 +1,4 @@
+import ProductImage from "../ui/ProductImage";
 import { useAutoCarousel } from "../../hooks/useAutoCarousel";
 import { Link } from "react-router-dom";
 import { useStore } from "../../contexts/StoreContext";
@@ -74,7 +75,7 @@ export default function HeroCarousel() {
           </Link>
         </div>
         {product && (
-          <img
+          <ProductImage
             className="hero-img"
             key={`image-${index}`}
             src={product.images[0] || product.thumbnail}

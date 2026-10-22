@@ -1,3 +1,4 @@
+import ProductImage from "../ui/ProductImage";
 import { Link } from "react-router-dom";
 import type { Product } from "../../types/product";
 import { useStore } from "../../contexts/StoreContext";
@@ -15,7 +16,7 @@ export default function ProductCard({ product: p }: { product: Product }) {
           className="product-picture"
           aria-label={`Ver ${p.title}`}
         >
-          <img src={p.thumbnail} alt={p.title} loading="lazy" />
+          <ProductImage src={p.thumbnail} alt={p.title} loading="lazy" />
           <span className="discount">-{Math.round(p.discountPercentage)}%</span>
         </Link>
         <button
