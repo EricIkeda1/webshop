@@ -43,7 +43,7 @@ export default function OrderPage() {
         </div>
       )}
       <div className="summary-line">
-        <span>Entrega simulada</span>
+        <span>Entrega cotada</span>
         <b>{order.shipping ? money(order.shipping) : "Grátis"}</b>
       </div>
       <div className="summary-line total">

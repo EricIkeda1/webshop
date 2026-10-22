@@ -38,7 +38,8 @@ export default function DemoStoreNotice({ children }: { children: ReactNode }) {
             <div>
               <strong>Nenhum produto será enviado</strong>
               <span>
-                Pedidos, preços e prazos de entrega são demonstrativos.
+                Consultar o frete não gera um envio. Os pedidos são
+                demonstrativos.
               </span>
             </div>
           </li>

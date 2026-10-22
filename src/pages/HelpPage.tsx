@@ -6,7 +6,7 @@ const questions = [
   ],
   [
     "Qual é o prazo de entrega?",
-    "As opções econômica, padrão e expressa têm prazos e preços simulados. Experimente o cálculo de frete com um CEP válido no carrinho.",
+    "Os prazos aparecem nas opções retornadas pela consulta de frete, quando a integração de envio estiver configurada. Cotações em ambiente de teste são identificadas. Consultar um frete não compra uma etiqueta nem gera um envio.",
   ],
   [
     "Como funciona a troca ou devolução?",
@@ -26,7 +26,7 @@ const questions = [
   ],
   [
     "Meus dados são enviados?",
-    "O checkout é simulado no navegador. O endereço e o e-mail digitados não são armazenados no histórico nem enviados a um servidor de pedidos. A lista de novidades também é apenas demonstrativa.",
+    "O checkout é simulado no navegador. O endereço e o e-mail digitados não são armazenados no histórico nem enviados a um servidor de pedidos. Somente o CEP é enviado ao ViaCEP e, se necessário, à BrasilAPI para consultar o endereço. A lista de novidades também é apenas demonstrativa.",
   ],
 ];
 export default function HelpPage() {

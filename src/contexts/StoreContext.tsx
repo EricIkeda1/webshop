@@ -4,7 +4,13 @@ import { useLocalStorage } from "../hooks/useLocalStorage";
 import { useProducts } from "../hooks/useProducts";
 import type { Product } from "../types/product";
 import type { CartItem, Order } from "../types/store";
+import type { ShippingSelection } from "../types/shipping";
+import { cartShippingKey } from "../services/shippingApi";
 interface StoreValue {
+  shippingCep: string;
+  setShippingCep: (cep: string) => void;
+  shippingSelection: ShippingSelection | null;
+  selectShipping: (selection: ShippingSelection | null) => void;
   products: Product[];
   registerProducts: (products: Product[]) => void;
   loading: boolean;
@@ -37,6 +43,17 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     [],
   );
   const [orders, setOrders] = useLocalStorage<Order[]>("eyi-react-orders", []);
+  const [shippingCep, setShippingCep] = useState("");
+  const [shippingChoice, selectShipping] = useState<ShippingSelection | null>(
+    null,
+  );
+  const shippingSelection =
+    shippingChoice &&
+    shippingChoice.cartKey === cartShippingKey(cart) &&
+    shippingChoice.cep === shippingCep.replace(/\D/g, "") &&
+    shippingChoice.option.expiresAt > Date.now()
+      ? shippingChoice
+      : null;
   const [coupon, setCoupon] = useState("");
   const [toast, setToast] = useState("");
   const notify = useCallback((message: string) => setToast(message), []);
@@ -100,7 +117,15 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     );
   }
   function placeOrder(shipping: number, payment: string) {
-    if (!cart.length) return null;
+    if (
+      !cart.length ||
+      !shippingSelection ||
+      shippingSelection.option.expiresAt <= Date.now()
+    ) {
+      notify("Calcule e selecione uma opção de entrega para continuar.");
+      return null;
+    }
+    shipping = shippingSelection.option.price;
     const order: Order = {
       id: `EYI-${crypto.randomUUID().slice(0, 8).toUpperCase()}`,
       date: new Date().toISOString(),
@@ -120,6 +145,10 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     <StoreContext.Provider
       value={{
         ...catalog,
+        shippingCep,
+        setShippingCep,
+        shippingSelection,
+        selectShipping,
         cart,
         favorites,
         orders,

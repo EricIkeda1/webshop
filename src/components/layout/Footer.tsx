@@ -11,7 +11,7 @@ const information = {
   },
   privacy: {
     title: "Política de privacidade",
-    text: "Carrinho, favoritos e histórico de pedidos ficam no armazenamento local deste navegador. Nome, endereço e e-mail digitados no checkout não são enviados a um servidor de pedidos nem armazenados no histórico. O catálogo e as imagens são consultados na DummyJSON e as fontes no Google Fonts, serviços que recebem as requisições do navegador. A newsletter é demonstrativa e não cadastra seu e-mail. Você pode apagar os dados locais nas configurações do navegador.",
+    text: "Carrinho, favoritos e histórico de pedidos ficam no armazenamento local deste navegador. Nome, endereço e e-mail digitados no checkout não são enviados a um servidor de pedidos nem armazenados no histórico. O catálogo e as imagens são consultados na DummyJSON e as fontes no Google Fonts, serviços que recebem as requisições do navegador. Somente o CEP digitado é enviado ao ViaCEP e, se necessário, à BrasilAPI para consultar o endereço. A newsletter é demonstrativa e não cadastra seu e-mail. Você pode apagar os dados locais nas configurações do navegador.",
   },
   social: {
     title: "Nossas redes sociais",

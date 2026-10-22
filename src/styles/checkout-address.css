@@ -1,0 +1,53 @@
+.cep-field {
+  gap: 8px;
+}
+.cep-search {
+  display: flex;
+  gap: 10px;
+}
+.cep-search > input {
+  flex: 1;
+  min-width: 0;
+}
+.cep-search .btn {
+  flex-shrink: 0;
+  padding-inline: 18px;
+}
+.cep-status {
+  font-size: 11px;
+  line-height: 1.7;
+  color: #778398;
+}
+.cep-status.loading {
+  color: #075cff;
+}
+.cep-status.success {
+  color: #19815d;
+}
+.cep-status.error {
+  color: #ad5528;
+}
+.cep-privacy {
+  font-size: 10px;
+  line-height: 1.7;
+  color: #929bad;
+}
+@media (max-width: 650px) {
+  .cep-search {
+    gap: 7px;
+  }
+  .cep-search .btn {
+    padding: 10px 12px;
+    font-size: 11px;
+  }
+  .cep-status {
+    font-size: 10px;
+  }
+  .cep-privacy {
+    font-size: 9px;
+  }
+}
+.shipping-calculator .radio-card { align-items: flex-start; gap: 10px; }
+.shipping-calculator .radio-card > div { flex: 1; min-width: 0; font-size: 12px; line-height: 1.6; }
+.shipping-calculator .radio-card > span { white-space: nowrap; font-size: 12px; }
+.shipping-calculator .radio-card p { margin: 3px 0 0; }

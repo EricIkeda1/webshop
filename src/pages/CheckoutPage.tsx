@@ -1,17 +1,13 @@
-import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useStore } from "../contexts/StoreContext";
 import OrderSummary from "../components/cart/OrderSummary";
+import CheckoutAddressFields from "../components/checkout/CheckoutAddressFields";
+import ShippingCalculator from "../components/cart/ShippingCalculator";
 import EmptyState from "../components/ui/EmptyState";
-const deliveries = [
-  { price: 0, label: "Econômica · 5 a 8 dias úteis", cost: "Grátis" },
-  { price: 19.9, label: "Padrão · 3 a 5 dias úteis", cost: "R$ 19,90" },
-  { price: 34.9, label: "Expressa · 1 a 2 dias úteis", cost: "R$ 34,90" },
-];
 export default function CheckoutPage() {
-  const { cart, placeOrder } = useStore();
+  const { cart, placeOrder, shippingSelection } = useStore();
   const navigate = useNavigate();
-  const [shipping, setShipping] = useState(0);
+  const shipping = shippingSelection?.option.price ?? 0;
   if (!cart.length)
     return (
       <EmptyState
@@ -71,62 +67,10 @@ export default function CheckoutPage() {
                 required
               />
             </label>
-            <label className="field">
-              CEP
-              <input
-                className="input"
-                name="cep"
-                inputMode="numeric"
-                pattern="[0-9]{5}-?[0-9]{3}"
-                placeholder="00000-000"
-                required
-              />
-            </label>
-            <label className="field">
-              Cidade
-              <input
-                className="input"
-                name="city"
-                placeholder="Sua cidade"
-                required
-              />
-            </label>
-            <label className="field full">
-              Endereço
-              <input
-                className="input"
-                name="street"
-                placeholder="Rua e bairro"
-                required
-              />
-            </label>
-            <label className="field">
-              Número
-              <input
-                className="input"
-                name="number"
-                placeholder="123"
-                required
-              />
-            </label>
-            <label className="field">
-              Complemento
-              <input className="input" name="extra" placeholder="Opcional" />
-            </label>
+            <CheckoutAddressFields />
           </div>
           <h3>Opções de entrega</h3>
-          {deliveries.map((delivery) => (
-            <label className="radio-card" key={delivery.price}>
-              <input
-                type="radio"
-                name="delivery"
-                checked={shipping === delivery.price}
-                onChange={() => setShipping(delivery.price)}
-              />
-              {delivery.label}
-              <span>{delivery.cost}</span>
-            </label>
-          ))}
+          <ShippingCalculator checkout />
           <h3>Forma de pagamento (simulada)</h3>
           <label className="radio-card">
             <input type="radio" name="payment" value="Pix" defaultChecked />
@@ -144,7 +88,7 @@ export default function CheckoutPage() {
           </label>
         </form>
         <div className="panel summary summary-self">
-          <OrderSummary shipping={shipping} checkout />
+          <OrderSummary checkout />
         </div>
       </div>
     </section>

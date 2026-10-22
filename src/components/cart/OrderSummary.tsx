@@ -3,13 +3,12 @@ import { useStore } from "../../contexts/StoreContext";
 import { money } from "../../utils/format";
 import Icon from "../ui/Icon";
 export default function OrderSummary({
-  shipping = 0,
   checkout = false,
 }: {
-  shipping?: number;
   checkout?: boolean;
 }) {
-  const { count, subtotal, discount } = useStore();
+  const { count, subtotal, discount, shippingSelection } = useStore();
+  const shipping = shippingSelection?.option.price ?? 0;
   const total = subtotal - discount + shipping;
   return (
     <>
@@ -27,16 +26,21 @@ export default function OrderSummary({
         </div>
       )}
       <div className="summary-line">
-        <span>Entrega demonstrativa</span>
-        <b>{shipping ? money(shipping) : "Grátis"}</b>
+        <span>Entrega</span>
+        <b>{shippingSelection ? money(shipping) : "A calcular"}</b>
       </div>
       <div className="summary-line total">
-        <span>Total</span>
+        <span>{shippingSelection ? "Total" : "Subtotal com desconto"}</span>
         <b>{money(total)}</b>
       </div>
       <p className="small-note">Em até 6x de {money(total / 6)} sem juros</p>
       {checkout ? (
-        <button className="btn" type="submit" form="checkout-form">
+        <button
+          className="btn"
+          type="submit"
+          form="checkout-form"
+          disabled={!shippingSelection}
+        >
           Confirmar pedido demonstrativo
         </button>
       ) : (

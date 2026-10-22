@@ -17,7 +17,7 @@ export default function CartItemRow({
   return (
     <div className="cart-row">
       <Link to={`/produto/${product.id}`}>
-        <img src={product.thumbnail} alt={product.title} />
+        <img src={`/api/catalog/products/${product.id}/thumbnail`} alt={product.title} />
       </Link>
       <div className="cart-row-info">
         <h3>{product.title}</h3>

@@ -1,14 +1,11 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useStore } from "../contexts/StoreContext";
 import CartItemRow from "../components/cart/CartItemRow";
 import OrderSummary from "../components/cart/OrderSummary";
+import ShippingCalculator from "../components/cart/ShippingCalculator";
 import EmptyState from "../components/ui/EmptyState";
 export default function CartPage() {
   const { cart, count, coupon, applyCoupon } = useStore();
-  const [shippingText, setShippingText] = useState(
-    "Valores de entrega simulados.",
-  );
   return (
     <section className="page">
       <div className="breadcrumb">
@@ -42,32 +39,7 @@ export default function CartPage() {
           </div>
           <div className="panel summary">
             <h3>Calcular frete</h3>
-            <form
-              className="inline"
-              onSubmit={(event) => {
-                event.preventDefault();
-                const cep = String(
-                  new FormData(event.currentTarget).get("cep") ?? "",
-                );
-                setShippingText(
-                  `CEP ${cep} · Econômica: grátis · 5 a 8 dias úteis (simulação)`,
-                );
-              }}
-            >
-              <input
-                className="input"
-                name="cep"
-                placeholder="Digite seu CEP"
-                inputMode="numeric"
-                pattern="[0-9]{5}-?[0-9]{3}"
-                required
-                aria-label="CEP"
-              />
-              <button className="btn">Calcular</button>
-            </form>
-            <div className="small-note" role="status">
-              {shippingText}
-            </div>
+            <ShippingCalculator />
             <h3 className="summary-heading">Cupom de desconto</h3>
             <form
               className="inline"
