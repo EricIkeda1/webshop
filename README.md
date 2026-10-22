@@ -2,6 +2,12 @@
 
 Loja fictícia com interface responsiva, catálogo paginado, carrossel automático, favoritos, carrinho, checkout e página Institucional. A entrada exige confirmação de que o site é demonstrativo.
 
+## Feedback de toque · versão 2.2.2
+
+O realce retangular nativo de toque foi desativado em links, botões, campos, rótulos e demais controles interativos. A navegação mobile mantém a cápsula azul da aba ativa e a animação de toque existente. Botões e links preservam seus formatos arredondados.
+
+O foco de teclado permanece visível e acompanha o formato dos controles. Na navegação inferior o indicador aparece ao redor da cápsula do ícone. Seleção de textos e funcionamento de formulários não foram desativados.
+
 ## Visibilidade e fixação do menu · versão 2.2.1
 
 O botão hambúrguer e o painel de categorias são renderizados somente quando a área da página tem até 650 px. No desktop eles não são inseridos na interface. O cabeçalho e a barra com Início, Tecnologia, Beleza, Casa e decoração, Moda e Ofertas permanecem juntos no topo ao rolar em qualquer direção somente no desktop. No mobile, o cabeçalho acompanha a rolagem normal; a navegação inferior permanece disponível.

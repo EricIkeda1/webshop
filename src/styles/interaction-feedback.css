@@ -1,0 +1,82 @@
+/* Replace the browser's rectangular touch flash with the existing UI feedback. */
+:where(
+  a,
+  button,
+  input,
+  select,
+  textarea,
+  summary,
+  label,
+  [role="button"],
+  [tabindex]
+) {
+  -webkit-tap-highlight-color: transparent;
+}
+:where(a, button, summary, [role="button"]) {
+  border-radius: 8px;
+}
+/* Pointer/touch focus does not need the browser's default outline. */
+:where(
+    a,
+    button,
+    input,
+    select,
+    textarea,
+    summary,
+    [role="button"],
+    [tabindex]
+  ):focus:not(:focus-visible) {
+  outline: none;
+}
+/* Keyboard users keep a clear indicator that follows each control's shape. */
+:where(
+  a,
+  button,
+  input,
+  select,
+  textarea,
+  summary,
+  [role="button"],
+  [tabindex]
+):focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+.search:has(input:focus-visible) {
+  box-shadow: 0 0 0 3px #80adff;
+}
+.search input:focus-visible {
+  outline: none;
+}
+@media (max-width: 650px) {
+  .mobile-nav a {
+    border-radius: 22px;
+    background: transparent;
+  }
+  .mobile-nav a:focus-visible {
+    outline: none;
+  }
+  .mobile-nav a:focus-visible .mobile-nav-icon {
+    box-shadow:
+      0 0 0 2px #f7faff,
+      0 0 0 4px var(--blue);
+  }
+}
+@media (forced-colors: active) {
+  :where(
+    a,
+    button,
+    input,
+    select,
+    textarea,
+    summary,
+    [role="button"],
+    [tabindex]
+  ):focus-visible {
+    outline-color: Highlight;
+  }
+  .mobile-nav a:focus-visible {
+    outline: 2px solid Highlight;
+    outline-offset: -2px;
+  }
+}
