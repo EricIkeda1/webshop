@@ -4,7 +4,7 @@ Loja fictícia com interface responsiva, catálogo paginado, carrossel automáti
 
 ## Rodar no computador
 
-Requer Node.js 22.12 ou superior.
+Requer Node.js 22.x atualizado (22.12 ou superior dentro da linha 22).
 
 ```sh
 npm install
@@ -21,6 +21,22 @@ npm start
 ```
 
 Abra http://localhost:3000. O servidor Node entrega `dist/` e as rotas de API. É necessário hospedar o projeto com suporte a Node; somente publicar a pasta `dist` não disponibiliza as APIs.
+
+## Publicar na Vercel
+
+Esta versão inclui Functions da Vercel em `api/index.mjs` e configuração em `vercel.json`. Não depende de um processo permanente `npm start` na Vercel.
+
+1. Envie o **projeto completo** ao repositório, incluindo `api/`, `server/`, `src/`, `public/`, `package.json`, `package-lock.json`, `vite.config.ts`, `tsconfig.json` e `vercel.json`. Não envie somente `dist/`.
+2. No projeto da Vercel, use como **Root Directory** a pasta que contém `package.json` e `vercel.json` (se o repositório tem a subpasta `EYI-Store-React`, selecione essa subpasta).
+3. Framework Preset: **Vite**; Install Command: **npm ci**; Build Command: **npm run build**; Output Directory: **dist**; Node.js: **22.x**. O arquivo de configuração já declara os comandos e a saída.
+4. Faça um novo deploy. Se houver configurações antigas manuais de rotas/build no painel, ajuste para os valores acima.
+5. Após publicar, o caminho `/api/health` deve responder `{"status":"ok"}`. Se o site abre mas as funções não respondem, confira se `api/` foi enviado e se Root Directory está correto.
+
+O arquivo `vercel.json` encaminha `/api/...` à Function, incluindo parâmetros de busca e paginação. Os arquivos privados do catálogo e do servidor são incluídos na Function, sem publicá-los como arquivos estáticos. O corpo JSON do frete funciona tanto em Node local quanto quando a Vercel já o processou.
+
+As variáveis do frete devem ser cadastradas em **Settings → Environment Variables** da Vercel, sem prefixo `VITE_`, e exigem novo deploy para entrar em vigor. O frete permanece indisponível até configurar credenciais, CEP de origem e embalagens. O cadastro de embalagens precisa existir no pacote de implantação da Function; o arquivo real é ignorado por padrão, portanto o responsável deve incluí-lo explicitamente no seu repositório/pacote privado quando estiver pronto. Não envie credenciais ao repositório.
+
+Build e testes locais das rotas foram aprovados, incluindo a simulação dos rewrites e do corpo JSON da Vercel. O deploy da sua conta não foi executado nem verificado nesta sessão.
 
 ## APIs e limites da proteção
 
@@ -62,27 +78,27 @@ CEP público de exemplo: `01001-000`. Somente o CEP é enviado para consultar o 
 
 ## Organização
 
-| Caminho | Responsabilidade |
-| --- | --- |
-| `src/App.tsx` | Aviso de loja fictícia, rotas e provedores |
-| `src/pages/` | Páginas React, incluindo Institucional com três seções |
-| `src/components/layout/` | Cabeçalho, navegação e rodapé com a logo Pix enviada |
-| `src/components/product/` | Cards, carrosséis e botão Ver mais |
-| `src/components/cart/` | Itens, resumo e calculadora de frete |
-| `src/components/checkout/` | Campos de endereço |
-| `src/components/ui/` | Controles reutilizáveis e aviso de entrada |
-| `src/contexts/` | Estado de produtos, carrinho, favoritos e seleção de entrega |
-| `src/hooks/` | Busca incremental, temporizador, CEP e animações |
-| `src/services/` | Chamadas às rotas da própria loja |
-| `src/types/`, `src/utils/` | Interfaces e utilitários |
-| `src/styles/` | CSS separado, responsividade e animações |
-| `server/api.mjs` | Rotas de API, validação e proxy de imagens |
-| `server/services/` | Integrações externas de produtos, CEP e frete |
-| `server/config/` | Configuração privada de envio |
-| `server/data/` | Catálogo de segurança privado |
-| `server/index.mjs` | Servidor HTTP de produção |
-| `scripts/` | Testes automatizados |
-| `public/assets/` | Logo EYI e logo Pix, sem catálogo público |
+| Caminho                    | Responsabilidade                                             |
+| -------------------------- | ------------------------------------------------------------ |
+| `src/App.tsx`              | Aviso de loja fictícia, rotas e provedores                   |
+| `src/pages/`               | Páginas React, incluindo Institucional com três seções       |
+| `src/components/layout/`   | Cabeçalho, navegação e rodapé com a logo Pix enviada         |
+| `src/components/product/`  | Cards, carrosséis e botão Ver mais                           |
+| `src/components/cart/`     | Itens, resumo e calculadora de frete                         |
+| `src/components/checkout/` | Campos de endereço                                           |
+| `src/components/ui/`       | Controles reutilizáveis e aviso de entrada                   |
+| `src/contexts/`            | Estado de produtos, carrinho, favoritos e seleção de entrega |
+| `src/hooks/`               | Busca incremental, temporizador, CEP e animações             |
+| `src/services/`            | Chamadas às rotas da própria loja                            |
+| `src/types/`, `src/utils/` | Interfaces e utilitários                                     |
+| `src/styles/`              | CSS separado, responsividade e animações                     |
+| `server/api.mjs`           | Rotas de API, validação e proxy de imagens                   |
+| `server/services/`         | Integrações externas de produtos, CEP e frete                |
+| `server/config/`           | Configuração privada de envio                                |
+| `server/data/`             | Catálogo de segurança privado                                |
+| `server/index.mjs`         | Servidor HTTP de produção                                    |
+| `scripts/`                 | Testes automatizados                                         |
+| `public/assets/`           | Logo EYI e logo Pix, sem catálogo público                    |
 
 ## Comandos
 

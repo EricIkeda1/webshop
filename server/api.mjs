@@ -59,6 +59,10 @@ export async function handleApi(req, res) {
     return true;
   }
   try {
+    if (req.method === "GET" && url.pathname === "/api/health") {
+      json(res, 200, { status: "ok" });
+      return true;
+    }
     if (req.method === "GET" && url.pathname === "/api/catalog/products") {
       const limit = Number(url.searchParams.get("limit") || 12),
         skip = Number(url.searchParams.get("skip") || 0),
@@ -160,20 +164,36 @@ export async function handleApi(req, res) {
         json(res, 415, { message: "Formato de solicitação inválido." });
         return true;
       }
-      let raw = "";
-      for await (const chunk of req) {
-        raw += chunk;
-        if (Buffer.byteLength(raw) > 16384) {
-          json(res, 413, { message: "Solicitação muito grande." });
+      let body;
+      // Vercel may parse the body before invoking the function; local Node supplies a stream.
+      if (req.body !== undefined && req.body !== null) {
+        try {
+          const raw =
+            typeof req.body === "string" ? req.body : JSON.stringify(req.body);
+          if (Buffer.byteLength(raw) > 16384) {
+            json(res, 413, { message: "Solicitação muito grande." });
+            return true;
+          }
+          body = typeof req.body === "string" ? JSON.parse(raw) : req.body;
+        } catch {
+          json(res, 400, { message: "Solicitação inválida." });
           return true;
         }
-      }
-      let body;
-      try {
-        body = JSON.parse(raw);
-      } catch {
-        json(res, 400, { message: "Solicitação inválida." });
-        return true;
+      } else {
+        let raw = "";
+        for await (const chunk of req) {
+          raw += chunk;
+          if (Buffer.byteLength(raw) > 16384) {
+            json(res, 413, { message: "Solicitação muito grande." });
+            return true;
+          }
+        }
+        try {
+          body = JSON.parse(raw);
+        } catch {
+          json(res, 400, { message: "Solicitação inválida." });
+          return true;
+        }
       }
       json(res, 200, await quoteShipping(body));
       return true;

@@ -1,7 +1,8 @@
 import { EnvHttpProxyAgent, setGlobalDispatcher } from "undici";
 import { fileURLToPath } from "node:url";
 try {
-  process.loadEnvFile(fileURLToPath(new URL("../../.env", import.meta.url)));
+  if (!process.env.VERCEL)
+    process.loadEnvFile(fileURLToPath(new URL("../../.env", import.meta.url)));
 } catch (error) {
   if (error.code !== "ENOENT") throw error;
 }
@@ -14,4 +15,10 @@ export const config = {
 };
 
 // Respect an explicitly configured corporate/hosting proxy without exposing it to the client.
-if (process.env.HTTP_PROXY || process.env.HTTPS_PROXY || process.env.http_proxy || process.env.https_proxy) setGlobalDispatcher(new EnvHttpProxyAgent());
+if (
+  process.env.HTTP_PROXY ||
+  process.env.HTTPS_PROXY ||
+  process.env.http_proxy ||
+  process.env.https_proxy
+)
+  setGlobalDispatcher(new EnvHttpProxyAgent());
