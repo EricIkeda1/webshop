@@ -1,16 +1,58 @@
 # EYI Store · React + TypeScript + servidor Node.js
 
+**Versão atual: 2.2.4** · Atualizado em 22/10/2026
+
 Loja fictícia com interface responsiva, catálogo paginado, carrossel automático, favoritos, carrinho, checkout e página Institucional. A entrada exige confirmação de que o site é demonstrativo.
 
-## Confirmação demonstrativa · versão 2.2.4
+## Licença — modificações não autorizadas proibidas
 
-A confirmação de um pedido demonstrativo não exige cotação de frete. O formulário continua exigindo nome, e-mail válido, CEP com 8 dígitos, logradouro, bairro, cidade, UF, número e a confirmação de que a compra é fictícia. Se a busca de CEP falhar, é possível preencher o endereço manualmente e concluir.
+Copyright © 2026 Eric Ikeda (EYI).
 
-Sem cotação válida, o resumo e a confirmação exibem **Total sem frete**, **Entrega não cotada** e informam que a entrega não está incluída. Não é apresentado frete grátis. Cotações válidas selecionadas continuam compondo o total; cotações vencidas ou referentes a outro CEP/carrinho não são reaproveitadas. O pedido registra se houve cotação e se ela era de teste.
+**Terceiros não podem modificar, adaptar ou criar versões derivadas dos materiais próprios deste projeto sem autorização prévia, expressa e por escrito de Eric Ikeda (EYI).** A proibição inclui código, funcionalidades, layout, estilos e textos próprios, assim como a publicação ou distribuição de versões modificadas.
 
-A geração do identificador local do pedido funciona também em prévias HTTP, onde `crypto.randomUUID` pode estar indisponível. Não se trata de um identificador de autenticação.
+É permitido consultar e executar a versão original inalterada, instalar suas dependências, compilar o projeto e preencher as configurações operacionais previstas nesta documentação. Preserve os avisos de autoria e licenciamento.
 
-Verificação: compilação e testes aprovados; no navegador, o formulário vazio foi bloqueado, os dados fictícios foram preenchidos manualmente e o pedido foi confirmado sem consulta de endereço nem cotação disponível. A tela Pedido realizado foi exibida, o carrinho foi esvaziado e a entrega ficou marcada como não cotada. Nenhum pagamento, envio ou e-mail foi realizado.
+Consulte os termos completos no arquivo [LICENSE](./LICENSE). A licença não é open source e não altera as licenças das dependências, os direitos sobre conteúdos de terceiros ou as exceções legais aplicáveis. Trata-se de uma condição de uso; não de um bloqueio técnico à edição dos arquivos.
+
+### License — unauthorized modifications prohibited (English)
+
+Copyright © 2026 Eric Ikeda (EYI).
+
+**Third parties may not modify, adapt or create derivative versions of this project's original materials without prior, express written authorization from Eric Ikeda (EYI).** This restriction includes the project's original code, functionality, layout, styles and text, as well as the publication or distribution of modified versions.
+
+You may inspect and run the original, unmodified version, install its dependencies, build the project and supply the operational settings provided for in this documentation. Preserve all authorship and licensing notices.
+
+The complete Portuguese and English terms are included in [LICENSE](./LICENSE). This is not an open-source license. It does not alter dependency licenses, third-party rights or applicable statutory exceptions. These are conditions of use, not a technical mechanism preventing file editing.
+
+## Última versão — 2.2.4
+
+### Correções do checkout
+
+- **Confirmação sem cotação de frete:** o pedido demonstrativo pode ser concluído mesmo quando o Melhor Envio não está configurado ou está indisponível.
+- **Preenchimento manual do endereço:** uma falha na busca de CEP não impede a conclusão quando os campos obrigatórios foram preenchidos.
+- **Frete não cotado identificado:** o resumo mostra “Total sem frete” e a confirmação informa “Entrega não cotada”, sem apresentar a entrega como grátis.
+- **Cotações válidas preservadas:** quando há uma opção selecionada e válida para o CEP e os itens atuais, seu preço compõe o total. Cotações vencidas ou de outro CEP/carrinho não são utilizadas.
+- **Código do pedido em páginas HTTP:** a geração do identificador local funciona também quando `crypto.randomUUID` não está disponível.
+- **Registro da entrega:** o pedido salva se o frete foi cotado e se a cotação veio do ambiente de teste.
+
+### Como confirmar a demonstração
+
+1. Adicione um produto ao carrinho e abra Finalizar compra.
+2. Preencha nome, e-mail válido, CEP com 8 dígitos, logradouro, bairro, cidade, UF e número usando dados fictícios. O complemento é opcional.
+3. Escolha uma forma de pagamento simulada.
+4. Marque “Entendo que este pedido é apenas uma demonstração”.
+5. Clique em **Confirmar pedido demonstrativo**. Consultar ou selecionar frete é opcional nesta demonstração.
+
+O formulário mantém a validação dos campos obrigatórios. Ao confirmar, o pedido fica salvo neste navegador, o carrinho é esvaziado e a tela **Pedido realizado!** é exibida. Nenhum pagamento, envio ou e-mail é realizado.
+
+### Validação da versão
+
+- Compilação e testes automatizados aprovados.
+- Formulário vazio bloqueado no teste pelo navegador.
+- Pedido concluído com dados fictícios preenchidos manualmente, sem consulta de endereço nem cotação disponível.
+- Tela de sucesso, carrinho vazio e indicação de entrega não cotada conferidos.
+
+**Limite atual:** esta versão libera o fluxo demonstrativo; não ativa a cotação real de frete. Para obter preços e prazos de transportadoras, configure o Melhor Envio conforme a seção Frete real.
 
 ## CEP no carrinho · versão 2.2.3
 

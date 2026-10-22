@@ -1,0 +1,146 @@
+LICENÇA RESTRITIVA DE USO — MODIFICAÇÕES NÃO AUTORIZADAS PROIBIDAS
+EYI Store — versão 2.2.4
+
+Copyright (c) 2026 EricIkeda1.
+Todos os direitos reservados sobre os materiais próprios abrangidos por esta licença.
+
+1. ABRANGÊNCIA
+
+Esta licença aplica-se ao código, aos estilos, à documentação e aos demais
+materiais próprios do projeto EYI Store sobre os quais Eric Ikeda detenha
+direitos. Componentes e materiais de terceiros estão sujeitos à cláusula 5.
+
+2. USO DA VERSÃO ORIGINAL
+
+É permitido baixar, consultar, copiar e executar a versão original e inalterada
+do projeto, preservando esta licença e os avisos de autoria. Instalar as
+dependências e gerar os arquivos de compilação a partir do código original são
+atos permitidos. Também é permitido preencher as configurações de ambiente e
+os dados operacionais expressamente previstos na documentação, sem alterar o
+código, a identidade visual ou os textos próprios do projeto.
+
+3. PROIBIÇÃO DE MODIFICAÇÕES POR TERCEIROS
+
+Sem autorização prévia, expressa e por escrito de Eric Ikeda1, terceiros
+não podem modificar, adaptar, traduzir, transformar ou criar obras derivadas dos
+materiais próprios abrangidos por esta licença, no todo ou em parte.
+
+A restrição inclui alterações no código-fonte, nas funcionalidades, nos estilos,
+no layout, nos textos e nos elementos visuais próprios. Também não é permitida
+a publicação ou distribuição de versões modificadas sem essa autorização.
+
+A disponibilização do código-fonte, por download ou em repositório público,
+não constitui, por si só, autorização para modificá-lo. Esta licença não é uma
+licença de código aberto (open source).
+
+4. AVISOS E AUTORIA
+
+As cópias permitidas da versão original devem manter este arquivo e os avisos
+de autoria e licenciamento. Não é permitido retirar ou substituir esses avisos
+para atribuir a terceiros a titularidade dos materiais próprios do projeto.
+A autorização para usar a versão original não transfere a titularidade desses
+materiais.
+
+5. DEPENDÊNCIAS E MATERIAIS DE TERCEIROS
+
+Esta licença não altera nem restringe os direitos concedidos pelas licenças
+próprias das dependências, ferramentas ou outros materiais de terceiros.
+
+React, Vite e outras dependências, assim como dados e imagens obtidos da
+DummyJSON, fontes, marcas, logotipos de meios de pagamento e demais conteúdos
+de terceiros, continuam sujeitos às licenças, condições e direitos de seus
+respectivos titulares. A inclusão desses materiais não representa declaração
+de propriedade de EricIkeda1 sobre eles.
+
+Quando um componente de terceiro puder ser modificado segundo sua própria
+licença, esta licença não retira essa permissão sobre aquele componente.
+
+6. EXCEÇÕES LEGAIS E AUTORIZAÇÕES ESPECÍFICAS
+
+Nenhuma disposição desta licença afasta direitos ou exceções que não possam
+ser excluídos pela legislação aplicável. Autorizações específicas por escrito
+podem permitir modificações nos limites nelas definidos. A restrição a terceiros
+não impede o próprio titular de modificar ou atualizar seus materiais.
+
+7. NATUREZA DEMONSTRATIVA
+
+O projeto representa uma loja fictícia. A permissão de uso não converte pedidos,
+pagamentos ou entregas demonstrativos em operações reais.
+
+Data desta licença: 22 de outubro de 2026.
+
+
+==========================================================================
+ENGLISH VERSION — TRANSLATION OF THE PORTUGUESE TERMS ABOVE
+==========================================================================
+
+RESTRICTIVE USE LICENSE — UNAUTHORIZED MODIFICATIONS PROHIBITED
+EYI Store — version 2.2.4
+
+Copyright (c) 2026 EricIkeda1.
+All rights reserved in the project-owned materials covered by this license.
+
+1. SCOPE
+
+This license applies to the code, styles, documentation and other original
+materials of the EYI Store project in which EricIkeda1 holds rights.
+Third-party components and materials are subject to section 5.
+
+2. USE OF THE ORIGINAL VERSION
+
+You may download, inspect, copy and run the original, unmodified version of the
+project, provided that this license and the authorship notices are preserved.
+Installing dependencies and generating build files from the original source
+code are permitted. You may also supply the environment settings and
+operational data expressly provided for in the documentation, without altering
+the project's code, visual identity or original text.
+
+3. PROHIBITION OF MODIFICATIONS BY THIRD PARTIES
+
+Without prior, express written authorization from EricIkeda1, third
+parties may not modify, adapt, translate, transform or create derivative works
+of the original materials covered by this license, in whole or in part.
+
+This restriction includes changes to the source code, functionality, styles,
+layout, text and original visual elements. Publishing or distributing modified
+versions without such authorization is also prohibited.
+
+Making the source code available for download or in a public repository does
+not, by itself, grant permission to modify it. This is not an open-source
+license.
+
+4. NOTICES AND AUTHORSHIP
+
+Permitted copies of the original version must retain this file and the
+authorship and licensing notices. These notices may not be removed or replaced
+to attribute ownership of the project's original materials to third parties.
+Permission to use the original version does not transfer ownership of those
+materials.
+
+5. THIRD-PARTY DEPENDENCIES AND MATERIALS
+
+This license does not alter or restrict rights granted by the separate
+licenses of dependencies, tools or other third-party materials.
+
+React, Vite and other dependencies, as well as data and images obtained from
+DummyJSON, fonts, trademarks, payment-method logos and other third-party
+content, remain subject to the licenses, terms and rights of their respective
+owners. Including these materials does not constitute a claim of ownership
+by EricIkeda1.
+
+Where a third-party component may be modified under its own license, this
+license does not revoke that permission for that component.
+
+6. STATUTORY EXCEPTIONS AND SPECIFIC AUTHORIZATIONS
+
+Nothing in this license excludes rights or exceptions that cannot be excluded
+under applicable law. Specific written authorizations may permit modifications
+within the limits they establish. The restriction on third parties does not
+prevent the rights holder from modifying or updating their own materials.
+
+7. DEMONSTRATION PURPOSE
+
+This project represents a fictional store. Permission to use it does not turn
+demonstration orders, payments or deliveries into real transactions.
+
+License date: October 22, 2026.
