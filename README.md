@@ -84,3 +84,7 @@ O ZIP não contém `node_modules` nem o resultado de build: essas pastas são ge
 ## Validação
 
 A checagem de tipos e o build de produção foram executados com sucesso. Os testes automatizados verificam lotes de 12 itens, ausência de duplicação, fim da lista, ordenação entre categorias, filtros, recuperação de falhas e cancelamento. A navegação e o botão Ver mais também foram conferidos no navegador.
+
+## Rodapé atualizado
+
+O rodapé segue a referência fornecida: logo em fundo claro, redes sociais, colunas Institucional e Atendimento, selos de pagamento e copyright. Componentes: `Footer.tsx`, `FooterSocials.tsx` e `FooterPayments.tsx`; estilos em `src/styles/footer.css`. Os ícones sociais abrem uma informação enquanto os perfis oficiais não forem configurados. Os selos de pagamento são ilustrativos e não representam integrações reais.
