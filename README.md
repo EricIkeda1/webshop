@@ -2,6 +2,20 @@
 
 Loja fictícia com interface responsiva, catálogo paginado, carrossel automático, favoritos, carrinho, checkout e página Institucional. A entrada exige confirmação de que o site é demonstrativo.
 
+## Visibilidade e fixação do menu · versão 2.2.1
+
+O botão hambúrguer e o painel de categorias são renderizados somente quando a área da página tem até 650 px. No desktop eles não são inseridos na interface. O cabeçalho e a barra com Início, Tecnologia, Beleza, Casa e decoração, Moda e Ofertas permanecem juntos no topo ao rolar em qualquer direção somente no desktop. No mobile, o cabeçalho acompanha a rolagem normal; a navegação inferior permanece disponível.
+
+Se ainda aparecer “Todas as categorias” no desktop, a página está usando uma versão anterior: substitua os arquivos pelo conteúdo deste ZIP, execute novamente a compilação e, na Vercel, faça um novo deploy do projeto atualizado. O ZIP não atualiza automaticamente uma implantação existente.
+
+## Navegação e ordenação · versão 2.2.0
+
+No desktop, a barra de categorias contém Início, Tecnologia, Beleza, Casa e decoração, Moda e Ofertas. O botão Todas as categorias foi removido; o menu hambúrguer fica disponível apenas no mobile. O cabeçalho e a barra de categorias compartilham o mesmo bloco fixo durante a rolagem, com destaque do link atual.
+
+O seletor de ordenação foi substituído por um painel inspirado no Material Design 3 Expressive: superfícies claras, cantos arredondados, ícones, indicador de seleção e animação respeitando movimento reduzido. Abre como diálogo no desktop e como painel inferior no mobile. A seleção aplica imediatamente Mais relevantes, Menor preço, Maior preço ou Melhor avaliação. Fechar, clicar no fundo ou pressionar Escape cancela a abertura sem alterar a opção atual. O foco fica contido no diálogo e retorna ao botão de origem.
+
+Verificação: navegação desktop e mobile, cabeçalho durante a rolagem, aplicação de Menor preço, fechamento por Escape e menu mobile conferidos no navegador. Compilação e testes automatizados aprovados. Não houve novo deploy na sua conta Vercel.
+
 ## Imagens e carrosséis · versão 2.1.1
 
 A cópia de segurança agora inclui as miniaturas dos 194 produtos e as fotos dos oito destaques (212 arquivos WebP). Elas são entregues pelas mesmas rotas `/api/catalog/products/...`, sem consultas externas de imagem quando a URL cadastrada corresponde à cópia local. O catálogo de produtos continua consultando a DummyJSON e recorrendo à cópia de segurança se a API falhar.

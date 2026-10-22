@@ -7,12 +7,16 @@ import { money } from "../utils/format";
 import ProductGrid from "../components/product/ProductGrid";
 import Icon from "../components/ui/Icon";
 import MobileProductFilters from "../components/product/MobileProductFilters";
+import ProductSortDialog, {
+  ProductSortButton,
+} from "../components/product/ProductSortDialog";
 export default function CatalogPage({ offers = false }: { offers?: boolean }) {
   const [params, setParams] = useSearchParams();
   const [filters, setFilters] = useState(false);
   const [maxPrice, setMaxPrice] = useState(40000);
   const [rating, setRating] = useState(0);
   const [sort, setSort] = useState("featured");
+  const [sortOpen, setSortOpen] = useState(false);
   const query = params.get("q") ?? "";
   const category = params.get("categoria") ?? "Todos";
   const feed = useProductFeed({
@@ -47,17 +51,12 @@ export default function CatalogPage({ offers = false }: { offers?: boolean }) {
             </h2>
             <p>Explore a seleção e toque em Ver mais para continuar.</p>
           </div>
-          <select
-            className="sort desktop-sort"
+          <ProductSortButton
             value={sort}
-            onChange={(event) => setSort(event.target.value)}
-            aria-label="Ordenar produtos"
-          >
-            <option value="featured">Mais relevantes</option>
-            <option value="low">Menor preço</option>
-            <option value="high">Maior preço</option>
-            <option value="rating">Melhor avaliação</option>
-          </select>
+            className="desktop-sort"
+            open={sortOpen}
+            onClick={() => setSortOpen(true)}
+          />
         </div>
         <div className="mobile-catalog-toolbar">
           <button
@@ -68,20 +67,22 @@ export default function CatalogPage({ offers = false }: { offers?: boolean }) {
           >
             <Icon name="filter" /> Filtrar
           </button>
-          <label className="sort-pill">
-            <Icon name="sort" />
-            <select
-              value={sort}
-              onChange={(event) => setSort(event.target.value)}
-              aria-label="Ordenar produtos no mobile"
-            >
-              <option value="featured">Ordenar</option>
-              <option value="low">Menor preço</option>
-              <option value="high">Maior preço</option>
-              <option value="rating">Melhor avaliação</option>
-            </select>
-          </label>
+          <ProductSortButton
+            value={sort}
+            className="mobile-sort"
+            open={sortOpen}
+            onClick={() => setSortOpen(true)}
+          />
         </div>
+        <ProductSortDialog
+          open={sortOpen}
+          value={sort}
+          onClose={() => setSortOpen(false)}
+          onChange={(value) => {
+            setSort(value);
+            setSortOpen(false);
+          }}
+        />
         {filters && (
           <MobileProductFilters
             initial={{ category, maxPrice, rating }}

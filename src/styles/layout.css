@@ -112,13 +112,6 @@
 .nav button {
   padding: 12px 0;
 }
-.nav button:first-child {
-  padding-right: 27px;
-  border-right: 1px solid var(--line);
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
 .nav .offer {
   color: var(--blue);
   font-weight: 700;

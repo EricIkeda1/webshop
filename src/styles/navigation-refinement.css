@@ -1,0 +1,323 @@
+.product-sort-open {
+  overflow: hidden;
+}
+/* Sticky navigation is enabled only on desktop. */
+.store-header {
+  position: relative;
+  z-index: 30;
+}
+.store-header .header {
+  position: static;
+}
+.nav-inner > a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 49px;
+  padding: 12px 0;
+  white-space: nowrap;
+  transition: color 180ms ease;
+}
+.nav-inner > a:hover,
+.nav-inner > a[aria-current="page"] {
+  color: var(--blue);
+}
+.nav-inner > a[aria-current="page"] {
+  font-weight: 700;
+}
+.nav-inner > a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  background: var(--blue);
+  border-radius: 4px 4px 0 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+@media (min-width: 651px) {
+  .store-header {
+    position: sticky;
+    top: 0;
+  }
+  .store-header .hamburger {
+    display: none;
+  }
+
+  .home-products,
+  .institutional-section,
+  .scroll-top {
+    scroll-margin-top: 160px;
+  }
+}
+.product-sort-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 12px 17px;
+  border-radius: 999px;
+  background: #e8effa;
+  border: 1px solid #dbe5f6;
+  color: #263a5f;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition:
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+.product-sort-trigger:hover,
+.product-sort-trigger[aria-expanded="true"] {
+  background: #dce8fc;
+  box-shadow: 0 3px 12px #244a8c12;
+}
+.product-sort-trigger > svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+.sort-trigger-prefix {
+  font-weight: 400;
+  color: #61728d;
+}
+.sort-trigger-chevron {
+  display: flex;
+  rotate: 90deg;
+}
+.sort-trigger-chevron svg {
+  width: 13px;
+  height: 13px;
+}
+.product-sort-dialog:not([open]) {
+  display: none;
+}
+.product-sort-dialog {
+  width: min(440px, calc(100% - 32px));
+  padding: 0;
+  border: 1px solid #dfe8f7;
+  border-radius: 32px;
+  color: #192945;
+  background: #f5f8ff;
+  box-shadow: 0 24px 80px #142c5330;
+  max-height: calc(100dvh - 40px);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.product-sort-dialog[open] {
+  animation: sort-dialog-enter 260ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.product-sort-dialog::backdrop {
+  background: #111c324f;
+}
+.product-sort-surface {
+  padding: 24px;
+}
+.sort-dialog-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 17px;
+}
+.sort-dialog-symbol {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  background: #dce9ff;
+  border-radius: 20px;
+  color: var(--blue);
+  rotate: -7deg;
+}
+.sort-dialog-symbol svg {
+  width: 25px;
+  height: 25px;
+  rotate: 7deg;
+}
+.sort-dialog-close {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  background: #e9eff9;
+  border-radius: 50%;
+}
+.sort-dialog-close:hover {
+  background: #dbe6f7;
+}
+.sort-dialog-close svg {
+  width: 18px;
+  height: 18px;
+}
+.product-sort-dialog h2 {
+  font:
+    800 29px Manrope,
+    sans-serif;
+  letter-spacing: -1px;
+  margin: 0 0 7px;
+}
+.product-sort-dialog p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #6c7c96;
+  margin: 0 0 22px;
+}
+.product-sort-options {
+  display: grid;
+  gap: 7px;
+}
+.product-sort-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+  padding: 14px 12px;
+  border: 1px solid transparent;
+  border-radius: 13px;
+  background: #eaf0fa;
+  transition:
+    border-radius 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+.product-sort-option:first-child {
+  border-radius: 22px 22px 13px 13px;
+}
+.product-sort-option:last-child {
+  border-radius: 13px 13px 22px 22px;
+}
+.product-sort-option:hover {
+  background: #e0eafc;
+}
+.product-sort-option:active {
+  transform: scale(0.985);
+}
+.product-sort-option.is-selected {
+  border-radius: 23px;
+  background: #d7e7ff;
+  border-color: #bcd6ff;
+}
+.sort-option-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  color: #526c96;
+  background: #f5f8ff;
+  flex-shrink: 0;
+}
+.is-selected .sort-option-icon {
+  color: white;
+  background: var(--blue);
+}
+.sort-option-icon svg {
+  width: 19px;
+  height: 19px;
+}
+.sort-option-copy {
+  flex: 1;
+  min-width: 0;
+}
+.sort-option-copy strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #263b5e;
+}
+.sort-option-copy small {
+  display: block;
+  font-size: 10px;
+  color: #6c7e99;
+  margin-top: 4px;
+  line-height: 1.5;
+}
+.sort-option-check {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid #b8c6dc;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.is-selected .sort-option-check {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: white;
+}
+.sort-option-check svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2.5;
+}
+.product-sort-dialog .sort-dialog-note {
+  font-size: 10px;
+  text-align: center;
+  margin: 18px 0 0;
+}
+.sort-sheet-handle {
+  display: none;
+}
+@keyframes sort-dialog-enter {
+  from {
+    opacity: 0;
+    translate: 0 18px;
+    scale: 0.97;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+  }
+}
+@media (max-width: 650px) {
+  .product-sort-trigger.mobile-sort {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 8px;
+    gap: 6px;
+    font-size: 11px;
+  }
+  .mobile-sort .sort-trigger-prefix {
+    display: none;
+  }
+  .product-sort-dialog {
+    position: fixed;
+    inset: auto 0 0;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 650px;
+    max-height: calc(100dvh - 20px);
+    border-radius: 30px 30px 0 0;
+  }
+  .product-sort-surface {
+    padding: 12px 20px max(24px, env(safe-area-inset-bottom));
+  }
+  .sort-sheet-handle {
+    display: block;
+    width: 40px;
+    height: 5px;
+    border-radius: 8px;
+    background: #bbcae0;
+    margin: 0 auto 16px;
+  }
+  .sort-dialog-heading {
+    margin-bottom: 14px;
+  }
+  .sort-option-copy strong {
+    font-size: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .product-sort-dialog[open] {
+    animation: none;
+  }
+  .product-sort-trigger,
+  .product-sort-option,
+  .nav-inner > a {
+    transition: none;
+  }
+}
