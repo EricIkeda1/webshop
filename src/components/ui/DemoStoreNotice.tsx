@@ -5,7 +5,13 @@ import "../../styles/demo-store-notice.css";
 
 /** Gate the application before mounting the store, including direct product links. */
 export default function DemoStoreNotice({ children }: { children: ReactNode }) {
-  const [accepted, setAccepted] = useState(false);
+  const [accepted, setAccepted] = useState(() => {
+    // Only bypass the entry notice inside the portfolio's non-interactive preview.
+    if (window.self === window.top || new URLSearchParams(window.location.search).get("portfolioPreview") !== "1") return false;
+    try {
+      return ["https://www.ericyikeda.com.br", "https://ericyikeda.com.br"].includes(new URL(document.referrer).origin);
+    } catch { return false; }
+  });
   if (accepted) return children;
   return (
     <main className="demo-entry">
